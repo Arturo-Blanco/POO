@@ -1,16 +1,16 @@
 class Auto {
-    public estaEncendido: boolean;
-    public marca: string;
-    public modelo: string;
-    public año: number;
-    public color: string;
-    public velocidad: number;
-    public numeroPuertas: number;
-    public vehiculo: string;
-    public combustible: string;
-    public consumo: number;
-    public tanque: number;
-    public nivelCombustible: number;
+    private estaEncendido: boolean;
+    private marca: string;
+    private modelo: string;
+    private año: number;
+    private color: string;
+    private velocidad: number;
+    private numeroPuertas: number;
+    private vehiculo: string;
+    private combustible: string;
+    private consumo: number;
+    private tanque: number;
+    private nivelCombustible: number;
 
     constructor(paramMarca:string,paramModelo: string, paramColor: string, paramAño: number, paramVelocidad:number) {
         this.marca = paramMarca;
