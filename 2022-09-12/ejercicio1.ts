@@ -1,57 +1,49 @@
-class SistemaEducativo {
-    private colegio: string;
-    private profesor: string;
-    private alumnos: Alumno[];
+class Student {
+    private name:string;
+    private surname:string;
+    private note:number;
 
-    public constructor(pColegio: string, pProfesor: string, pAlumnos: Alumno[]) {
-        this.colegio= pColegio;
-        this.profesor=pProfesor;
-        this.alumnos= pAlumnos;
+    public constructor(pName:string, pSurname:string, pNote:number){
+        this.name = pName;
+        this.surname = pSurname;
+        this.note = pNote;
     }
-    public newProfesor(): string {
-        return this.profesor;
+    public setNewStudent(newName:string, newSurname:string):void {
+        this.name = newName;
+        this.surname = newSurname;
     }
-    public newColegio(): string {
-        return this.colegio;
+    public setStudentNote(newNote:number):void {
+        this.note = newNote;
     }
-    public newAlumnos(): void {
-        this.alumnos;
+    public getNameStudent():string {
+        return this.name + ' ' + this.surname;
     }
-    public getDatoAlumno(): void {
-        return 
+    public getStudentNote():number {
+        return this.note;
     }
 }
-class Alumno {
-    private nombre: string;
-    private apellido: string;
-    private nota:number;
-    public constructor(pNombre: string, pApellido:string, pNota:number){
-        this.nombre=pNombre;
-        this.apellido=pApellido;
-        this.nota= pNota;
+class EducationSystem {
+    private studentList:Student[];
+    public constructor(pStudent:Student[]) {
+        this.studentList=pStudent;
     }
-/*    public setAlumno(nuevoNombre: string, nuevoApellido: string, nuevaNota: number): void {
-        this.nombre = nuevoNombre;
-        this.apellido = nuevoApellido;
-        this.nota = nuevaNota;
-    }*/
-
-    public newAlumno(): any {
-        return this.nombre + ' ' + this.apellido+' '+ this.nota;
+    public searcApprovStudent(pStudent:Student): void {
+        let approvStudent = pStudent.getStudentNote();
+        //for(let i:number= 0; i<this.studentList.length; i++) {
+            if(approvStudent>= 7) {
+                console.log('El alumno aprobó, la nota del alumno ')
+            }
+            else {
+                console.log('El alumno desaprobo');
+                
+            }
+        }
     }
- /*   public getNota(): void {
-        if(this.nota >= 7) {
-    console.log('El alumno aprobo');
-        }
-        else {
-    console.log('El alumno desaprobo');
-    return
-        }
-    }*/
-}
-let alumnos: Alumno[] = [
-    new Alumno('Juan','Blanco','10')
-];
+//}
+let student1= new Student('Juan','Rodriguez',9);
+let student2= new Student('Jose','Frias',6);
+let student3= new Student('Maria','Gutierrez',7);
 
-let primero= Alumno[0];
-console.log(primero);
+let studentList: Student[] = [student1, student2, student3] ;
+let registerStudents = new EducationSystem(studentList);
+let registerApprov = registerStudents.searcApprovStudent(student1);
