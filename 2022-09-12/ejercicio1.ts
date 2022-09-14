@@ -28,22 +28,24 @@ class EducationSystem {
         this.studentList=pStudent;
     }
     public searcApprovStudent(pStudent:Student): void {
-        let approvStudent = pStudent.getStudentNote();
-        //for(let i:number= 0; i<this.studentList.length; i++) {
-            if(approvStudent>= 7) {
-                console.log('El alumno aprobó, la nota del alumno ')
+        let noteStudent = pStudent.getStudentNote();
+        let nameStudent = pStudent.getNameStudent()
+            if(noteStudent>= 7) {
+                console.log('El alumno '+nameStudent+' aprobó, su nota es '+noteStudent);
             }
             else {
-                console.log('El alumno desaprobo');
+                console.log('El alumno '+nameStudent+' desaprobó, su nota es '+noteStudent);
                 
             }
         }
     }
-//}
 let student1= new Student('Juan','Rodriguez',9);
 let student2= new Student('Jose','Frias',6);
 let student3= new Student('Maria','Gutierrez',7);
+let student4= new Student('Leandro','Fernandez',2);
+let student5= new Student('Ana','Lencina',10);
+
 
 let studentList: Student[] = [student1, student2, student3] ;
 let registerStudents = new EducationSystem(studentList);
-let registerApprov = registerStudents.searcApprovStudent(student1);
+let registerApprov = registerStudents.searcApprovStudent(student2);
