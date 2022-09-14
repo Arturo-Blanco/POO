@@ -8,7 +8,7 @@ class Student {
         this.surname = pSurname;
         this.note = pNote;
     }
-    public setNewStudent(newName:string, newSurname:string):void {
+    public setStudent(newName:string, newSurname:string):void {
         this.name = newName;
         this.surname = newSurname;
     }
@@ -35,7 +35,6 @@ class EducationSystem {
             }
             else {
                 console.log('El alumno '+nameStudent+' desaprobó, su nota es '+noteStudent);
-                
             }
         }
     }
@@ -45,7 +44,6 @@ let student3= new Student('Maria','Gutierrez',7);
 let student4= new Student('Leandro','Fernandez',2);
 let student5= new Student('Ana','Lencina',10);
 
-
 let studentList: Student[] = [student1, student2, student3] ;
 let registerStudents = new EducationSystem(studentList);
-let registerApprov = registerStudents.searcApprovStudent(student2);
+let registerApprov = registerStudents.searcApprovStudent(student1);
