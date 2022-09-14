@@ -22,10 +22,10 @@ class SistemaEducativo {
     }
 }
 class Alumno {
-    private nombre:[];
-    private apellido: [];
-    private nota: [];
-    public constructor(pNombre:[], pApellido: [], pNota: []){
+    private nombre: string;
+    private apellido: string;
+    private nota:number;
+    public constructor(pNombre: string, pApellido:string, pNota:number){
         this.nombre=pNombre;
         this.apellido=pApellido;
         this.nota= pNota;
@@ -36,8 +36,8 @@ class Alumno {
         this.nota = nuevaNota;
     }*/
 
-    public newAlumno(): string {
-        return this.nombre + '' + this.apellido+''+ this.nota;
+    public newAlumno(): any {
+        return this.nombre + ' ' + this.apellido+' '+ this.nota;
     }
  /*   public getNota(): void {
         if(this.nota >= 7) {
@@ -50,5 +50,8 @@ class Alumno {
     }*/
 }
 let alumnos: Alumno[] = [
+    new Alumno('Juan','Blanco','10')
 ];
 
+let primero= Alumno[0];
+console.log(primero);
