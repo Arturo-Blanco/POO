@@ -12,7 +12,8 @@ class Auto {
     private tanque: number;
     private nivelCombustible: number;
 
-    constructor(paramMarca:string,paramModelo: string, paramColor: string, paramAño: number, paramVelocidad:number) {
+    constructor( paramVehiculo: string, paramMarca:string,paramModelo: string, paramColor: string, paramAño: number, paramVelocidad:number) {
+        this.vehiculo=paramVehiculo;
         this.marca = paramMarca;
         this.modelo= paramModelo;
         this.color = paramColor;
@@ -62,10 +63,11 @@ class Auto {
         this.velocidad === 0;
     }
 }
-let autoNuevo = new Auto('Volkswagen', 'Gol', 'Azul', 2018 , 50);
+let autoNuevo = new Auto('auto','Volkswagen', 'Gol', 'Azul', 2018 , 50);
+let tipoVehiculoNuevo = autoNuevo.tipoVehiculo();
 let marcaAutoNuevo= autoNuevo.obtenerMarcaVehiculo();
 let añoAutoNuevo = autoNuevo.añoVehiculo();
 let colorAutoNuevo = autoNuevo.colorVehiculo();
 let velocidadAutoNuevo= autoNuevo.velocidadActual();
 
-console.log('Mi nuevo auto es un '+marcaAutoNuevo+', año '+ añoAutoNuevo+', color '+colorAutoNuevo+' y ahora esta rodando a '+velocidadAutoNuevo+' km/h.');
+console.log('Mi nuevo vehiculo es un '+tipoVehiculoNuevo+', marca ' +marcaAutoNuevo+', año '+ añoAutoNuevo+', color '+colorAutoNuevo+' y ahora esta rodando a '+velocidadAutoNuevo+' km/h.');

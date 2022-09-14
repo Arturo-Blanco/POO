@@ -1,6 +1,6 @@
-/*
-var Auto = /** @class */ /*(function () {
-    function Auto(paramMarca, paramModelo, paramColor, paramAño, paramVelocidad) {
+var Auto = /** @class */ (function () {
+    function Auto(paramVehiculo, paramMarca, paramModelo, paramColor, paramAño, paramVelocidad) {
+        this.vehiculo = paramVehiculo;
         this.marca = paramMarca;
         this.modelo = paramModelo;
         this.color = paramColor;
@@ -50,12 +50,10 @@ var Auto = /** @class */ /*(function () {
     };
     return Auto;
 }());
-var autoNuevo = new Auto('Volkswagen', 'Gol', 'Azul', 2018, 50);
+var autoNuevo = new Auto('auto', 'Volkswagen', 'Gol', 'Azul', 2018, 50);
+var tipoVehiculoNuevo = autoNuevo.tipoVehiculo();
 var marcaAutoNuevo = autoNuevo.obtenerMarcaVehiculo();
 var añoAutoNuevo = autoNuevo.añoVehiculo();
 var colorAutoNuevo = autoNuevo.colorVehiculo();
 var velocidadAutoNuevo = autoNuevo.velocidadActual();
-console.log('Mi nuevo auto es un ' + marcaAutoNuevo + ', año ' + añoAutoNuevo + ', color ' + colorAutoNuevo + ' y ahora esta rodando a ' + velocidadAutoNuevo + ' km/h.');
-
-
-Se transpila archivo ts a js */
+console.log('Mi nuevo vehiculo es un ' + tipoVehiculoNuevo + ', marca ' + marcaAutoNuevo + ', año ' + añoAutoNuevo + ', color ' + colorAutoNuevo + ' y ahora esta rodando a ' + velocidadAutoNuevo + ' km/h.');
