@@ -46,37 +46,40 @@ class Teacher {
         return this.nameTeacher+''+this.sunameTeacher+''+this.assignatureTeacher;
     }
     public searcApprovStudent(pStudent:Student):void {
-        let averageStudent: number = 0;
+        let averageStudent;
         let noteStudent = pStudent.getStudentNote();
         let nameStudent = pStudent.getNameStudent();
-        averageStudent = noteStudent/3;
-        let roundAverage= averageStudent.toFixed(2)
-        if(roundAverage >= 7) {
-            console.log(`El alumno ${nameStudent} aprobó, su nota es un ${roundAverage}.`);
+        averageStudent = (noteStudent/3).toFixed(2)
+        
+        if(averageStudent >= 7) {
+            console.log(`El alumno ${nameStudent} aprobó, su promedio de notas es un ${averageStudent}.`);
         }
         else {
-            console.log(`El alumno ${nameStudent} desaprobó, su nota es un ${roundAverage}.`);
+            console.log(`El alumno ${nameStudent} desaprobó, su promedio de notas es un ${averageStudent}.`);
         }
+        return averageStudent;
     }
-    } 
-    class Colege {
+    public noteTeacher(): number{
+        let notes: number=0;
+        for(let i: number=0;i<this.studentList.length; i++) {
+        notes += (this.studentList[i].getStudentNote())/3;
+        }
+        console.log('El promedio de  ');
         
-        public noteTeacher(): number{
-            let notes: number=0;
-            for(let i: number=0;i<this.studentList.length; i++) {
-            notes += this.studentList[i].getStudentNote();
-            }
-            return notes / studentList.length;
-            } 
+        return notes / studentList.length;
+        } 
+}
+    class Colege {
     }
-let student1= new Student('Juan','Rodriguez',9,3,5);
+        
+let student1= new Student('Juan','Rodriguez',9,7,5);
 let student2= new Student('Jose','Frias',6,9,5);
-let student3= new Student('Maria','Gutierrez',7,3,8);
+let student3= new Student('Maria','Gutierrez',7,7,8);
 let student4= new Student('Leandro','Fernandez',2,10,5);
 let student5= new Student('Ana','Lencina',10,7,8);
 
 let studentList: Student[] = [student1,student2,student3,student4,student5] ;
 let registerStudents = new Teacher('Hernan','Ibarra','Matematica',studentList);
-let registerApprov = registerStudents.searcApprovStudent(student1);
+let registerApprov = registerStudents.searcApprovStudent(student3);
 let aprovTeacher=registerStudents.noteTeacher();
 console.log(aprovTeacher);
