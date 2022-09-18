@@ -1,85 +1,152 @@
 class Student {
     private name:string;
     private surname:string;
-    private note1:number;
-    private note2:number;
-    private note3:number;
+    private mathNote:number;
+    private pshysicsNote:number;
+    private philosophyNote:number;
 
-    public constructor(pName:string,pSurname:string,pNote1:number,pNote2:number,pNote3:number){
+    public constructor(pName:string,pSurname:string,pMathNote:number,pPshysicsNote:number,pPhilosophyNote:number){
         this.name = pName;
         this.surname = pSurname;
-        this.note1 = pNote1;
-        this.note2 = pNote2;
-        this.note3 = pNote3;
-
+        this.mathNote=pMathNote;
+        this.pshysicsNote=pPshysicsNote;
+        this.philosophyNote=pPhilosophyNote;
     }
     public setStudent(newName:string,newSurname:string):void {
-        this.name = newName;
-        this.surname = newSurname;
+        this.name=newName;
+        this.surname=newSurname;
     }
-    public setStudentNote(newNote:number):void {
-        this.note1 = newNote;
-    }
-    public getNameStudent():string {
+    public getNameStudent():string{
         return this.name + ' ' +this.surname;
     }
-    public getStudentNote():number {
-        return this.note1+this.note2+this.note3;
+    public setMathNote(pMathNote:number):void {
+        this.mathNote=pMathNote;
+    }
+    public setPshysicsNote(pPshysicsNote:number):void {
+        this.pshysicsNote=pPshysicsNote;
+    }
+    public setPhilosophyNote(pPhilosophyNote:number):void {
+        this.philosophyNote=pPhilosophyNote;
+    }
+    /* funcion para que el alumno pueda consultar su nota en las materias que esta enrrolado */
+    public getStudentNote(assignature:string):string{
+        if(assignature==='Matematica'){
+                if(this.mathNote>=7) {
+            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.mathNote}.`;
+        } else {
+            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.mathNote}.`;
+            }
+        }
+        if(assignature==='Fisica'){
+                if(this.pshysicsNote>=7) {
+            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.pshysicsNote}.`;
+        } else {
+            return `${this.getNameStudent()} desaprobó ${assignature} con un ${this.pshysicsNote}.`;
+            }
+        }
+        if(assignature==='Filosofia') {
+                if(this.philosophyNote>=7) {
+            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.philosophyNote}.`;
+        } else {
+            return `${this.getNameStudent()} desaprobó ${assignature} con un ${this.philosophyNote}.`;
+            }
+        }
+        if(assignature===undefined) {
+            return `${this.getNameStudent()} ingrese una materia para saber su nota.`;
+        }
+        else {
+            return `${this.getNameStudent()} no esta matriculado en la materia que busca, ingrese una materia valida.`;
+        }
     }
 }
 class Teacher {
     private nameTeacher:string;
-    private sunameTeacher:string;
+    private surnameTeacher:string;
     private assignatureTeacher:string;
     private studentList:Student[];
     
-    public constructor(pNameTeacher:string,psurnameTeacher:string, pAssignatureTeacher:string,pStudent:Student[]) {
+    public constructor(pNameTeacher:string,psurnameTeacher:string,pAssignatureTeacher:string,pStudent:Student[]) {
         this.studentList=pStudent;
         this.nameTeacher=pNameTeacher;
-        this.sunameTeacher=psurnameTeacher;
+        this.surnameTeacher=psurnameTeacher;
         this.assignatureTeacher=pAssignatureTeacher;
     }
-    public setTeacher(newTeacher:string):void {
-        this.nameTeacher=newTeacher;
+    public setTeacher(pNameTeacher:string,psurnameTeacher:string,pAssignatureTeacher:string):void {
+        this.nameTeacher=pNameTeacher;
+        this.surnameTeacher=psurnameTeacher;
+        this.assignatureTeacher=pAssignatureTeacher;
     }
     public getTeacher():string {
-        return this.nameTeacher+''+this.sunameTeacher+''+this.assignatureTeacher;
+        return `${this.surnameTeacher} ${this.nameTeacher}, asignatura ${this.assignatureTeacher}.`;
     }
-    public searcApprovStudent(pStudent:Student):void {
-        let averageStudent;
-        let noteStudent = pStudent.getStudentNote();
-        let nameStudent = pStudent.getNameStudent();
-        averageStudent = (noteStudent/3).toFixed(2)
-        
-        if(averageStudent >= 7) {
-            console.log(`El alumno ${nameStudent} aprobó, su promedio de notas es un ${averageStudent}.`);
-        }
-        else {
-            console.log(`El alumno ${nameStudent} desaprobó, su promedio de notas es un ${averageStudent}.`);
-        }
-        return averageStudent;
-    }
-    public noteTeacher(): number{
-        let notes: number=0;
-        for(let i: number=0;i<this.studentList.length; i++) {
-        notes += (this.studentList[i].getStudentNote())/3;
-        }
-        console.log('El promedio de  ');
-        
-        return notes / studentList.length;
-        } 
 }
-    class Colege {
+class College {
+    private collegeName:string;
+    private teacherList:Teacher[];
+    private studentList:Student[];
+
+    public constructor(pCollegeName:string,pTeacherList:Teacher[],pStudentList:Student[]){
+    this.collegeName=pCollegeName;
+    this.teacherList=pTeacherList;
+    this.studentList=pStudentList;
     }
-        
+    public getCollegeName():string{
+        return this.collegeName;
+    }
+    public setCollegeName(newCollegeName:string):void{
+        this.collegeName=newCollegeName;
+    }
+    /* funcion para que el colegio pueda contratar a un nuevo profesor y asignarle sus alumnos */
+    public hireNewTeacher(pName:string,pSurname:string,pAssignature:string):any{
+        let newTeacher=new Teacher(pName,pSurname,pAssignature,studentList1); 
+        this.teacherList.push(newTeacher);
+        return `Se ah contratado al profesor ${pName+' '+pSurname} que se desempeña en la asignatura ${pAssignature}.`
+    }
+    /* funcion para que el colegio pueda despedir a un profesor*/
+    public fireTeacher(pTeacher:Teacher):any{
+        let teacher=pTeacher.getTeacher();
+        for(let i= 0;i<this.teacherList.length;i++) {
+            if(pTeacher.getTeacher() === this.teacherList[i].getTeacher()){
+                this.teacherList.splice(i,1);
+                    return `El profesor ${teacher} ah sido despedido.` 
+            }
+        }
+    }
+    /* funcion para que el colegio pueda matricular a un nuevo alumno*/
+    public enrollStudent(pName:Student):void {
+        this.studentList.push(pName);
+    }
+    /* funcion para que el colegio pueda remover a un alumno*/
+    public removeStudent(pName:Student):any{
+        let student=pName.getNameStudent();
+        for(let i:number=0;i<this.studentList.length;i++){
+            if(pName.getNameStudent() === this.studentList[i].getNameStudent()){
+                this.studentList.splice(i,1);
+                    return `El alumno ${student} ah sido removido de la institución.`
+            }
+        }
+    }
+}
+
+    /* Listado de alumnos matriculados */
 let student1= new Student('Juan','Rodriguez',9,7,5);
 let student2= new Student('Jose','Frias',6,9,5);
 let student3= new Student('Maria','Gutierrez',7,7,8);
 let student4= new Student('Leandro','Fernandez',2,10,5);
 let student5= new Student('Ana','Lencina',10,7,8);
-
-let studentList: Student[] = [student1,student2,student3,student4,student5] ;
-let registerStudents = new Teacher('Hernan','Ibarra','Matematica',studentList);
-let registerApprov = registerStudents.searcApprovStudent(student3);
-let aprovTeacher=registerStudents.noteTeacher();
-console.log(aprovTeacher);
+let studentList1: Student[] = [student1,student2,student3,student4,student5] ;
+    /* Listado de profesores activos */
+let mathTeacher= new Teacher('Hernan','Ibarra','Matemática',studentList1);
+let philosophyTeacher = new Teacher('Salvador','Flores','Filosofia',studentList1);
+let pshysicTeacher= new Teacher('Mirta','Salvattori','Fisica',studentList1);
+let teacherList: Teacher[] = [philosophyTeacher,mathTeacher,pshysicTeacher];
+    /*Colegio */
+let college = new College('San Martin',teacherList,studentList1);
+let newTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
+    /*Se prueban las instancias de cada objeto */
+console.log(pshysicTeacher.getTeacher());
+console.log(student1.getStudentNote(''));
+console.log(newTeacher);
+console.log(teacherList);
+console.log(college.fireTeacher(pshysicTeacher));
+console.log(college.removeStudent(student1));
