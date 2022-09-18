@@ -34,7 +34,7 @@ class Student {
                 if(this.mathNote>=7) {
             return `${this.getNameStudent()} aprobó ${assignature} con un ${this.mathNote}.`;
         } else {
-            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.mathNote}.`;
+            return `${this.getNameStudent()} desaprobó ${assignature} con un ${this.mathNote}.`;
             }
         }
         if(assignature==='Fisica'){
@@ -129,24 +129,24 @@ class College {
 }
 
     /* Listado de alumnos matriculados */
-let student1= new Student('Juan','Rodriguez',9,7,5);
-let student2= new Student('Jose','Frias',6,9,5);
-let student3= new Student('Maria','Gutierrez',7,7,8);
-let student4= new Student('Leandro','Fernandez',2,10,5);
-let student5= new Student('Ana','Lencina',10,7,8);
-let studentList1: Student[] = [student1,student2,student3,student4,student5] ;
+let student1=new Student('Juan','Rodriguez',9,7,5);
+let student2=new Student('Jose','Frias',6,9,5);
+let student3=new Student('Maria','Gutierrez',7,7,8);
+let student4=new Student('Leandro','Fernandez',2,10,5);
+let student5=new Student('Ana','Lencina',10,7,8);
+let studentList1:Student[]=[student1,student2,student3,student4,student5] ;
     /* Listado de profesores activos */
-let mathTeacher= new Teacher('Hernan','Ibarra','Matemática',studentList1);
-let philosophyTeacher = new Teacher('Salvador','Flores','Filosofia',studentList1);
-let pshysicTeacher= new Teacher('Mirta','Salvattori','Fisica',studentList1);
-let teacherList: Teacher[] = [philosophyTeacher,mathTeacher,pshysicTeacher];
+let mathTeacher=new Teacher('Hernan','Ibarra','Matemática',studentList1);
+let philosophyTeacher=new Teacher('Salvador','Flores','Filosofia',studentList1);
+let pshysicTeacher=new Teacher('Mirta','Salvattori','Fisica',studentList1);
+let teacherList:Teacher[]=[philosophyTeacher,mathTeacher,pshysicTeacher];
     /*Colegio */
-let college = new College('San Martin',teacherList,studentList1);
+let college=new College('San Martin',teacherList,studentList1);
 let newTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
     /*Se prueban las instancias de cada objeto */
 console.log(pshysicTeacher.getTeacher());
-console.log(student1.getStudentNote(''));
+console.log(student1.getStudentNote('Matematica'));
 console.log(newTeacher);
 console.log(teacherList);
-console.log(college.fireTeacher(pshysicTeacher));
-console.log(college.removeStudent(student1));
+console.log(college.fireTeacher(mathTeacher));
+console.log(college.removeStudent(student4));
