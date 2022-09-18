@@ -29,7 +29,7 @@ var Student = /** @class */ (function () {
                 return "".concat(this.getNameStudent(), " aprob\u00F3 ").concat(assignature, " con un ").concat(this.mathNote, ".");
             }
             else {
-                return "".concat(this.getNameStudent(), " aprob\u00F3 ").concat(assignature, " con un ").concat(this.mathNote, ".");
+                return "".concat(this.getNameStudent(), " desaprob\u00F3 ").concat(assignature, " con un ").concat(this.mathNote, ".");
             }
         }
         if (assignature === 'Fisica') {
@@ -100,11 +100,16 @@ var College = /** @class */ (function () {
                 this.teacherList.splice(i, 1);
                 return "El profesor ".concat(teacher, " ah sido despedido.");
             }
+            else {
+                return "El profesor ".concat(teacher, " no esta contratado en la institucion.");
+            }
         }
     };
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
-    College.prototype.enrollStudent = function (pName) {
-        this.studentList.push(pName);
+    College.prototype.enrollStudent = function (pName, pSurname) {
+        var newStudent = new Student(pName, pSurname, 0, 0, 0);
+        this.studentList.push(newStudent);
+        return "Se ah matriculado al alumno ".concat(pName + ' ' + pSurname, ".");
     };
     /* funcion para que el colegio pueda remover a un alumno*/
     College.prototype.removeStudent = function (pName) {
@@ -133,10 +138,12 @@ var teacherList = [philosophyTeacher, mathTeacher, pshysicTeacher];
 /*Colegio */
 var college = new College('San Martin', teacherList, studentList1);
 var newTeacher = college.hireNewTeacher('Juan', 'Rodriguez', 'Ciencia');
+var newStudent = college.enrollStudent('Juan', 'Blanco');
 /*Se prueban las instancias de cada objeto */
 console.log(pshysicTeacher.getTeacher());
-console.log(student1.getStudentNote(''));
+console.log(student1.getStudentNote('Matematica'));
 console.log(newTeacher);
 console.log(teacherList);
 console.log(college.fireTeacher(pshysicTeacher));
-console.log(college.removeStudent(student1));
+console.log(college.removeStudent(student4));
+console.log(newStudent);

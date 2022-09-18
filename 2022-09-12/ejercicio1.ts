@@ -106,15 +106,19 @@ class College {
     public fireTeacher(pTeacher:Teacher):any{
         let teacher=pTeacher.getTeacher();
         for(let i= 0;i<this.teacherList.length;i++) {
-            if(pTeacher.getTeacher() === this.teacherList[i].getTeacher()){
+            if(pTeacher.getTeacher()===this.teacherList[i].getTeacher()){
                 this.teacherList.splice(i,1);
                     return `El profesor ${teacher} ah sido despedido.` 
+            } else {
+                return `El profesor ${teacher} no esta contratado en la institucion.`
             }
         }
     }
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
-    public enrollStudent(pName:Student):void {
-        this.studentList.push(pName);
+    public enrollStudent(pName:string,pSurname:string):string{
+        let newStudent=new Student(pName,pSurname,0,0,0)
+        this.studentList.push(newStudent);
+        return `Se ah matriculado al alumno ${pName+' '+pSurname}.`
     }
     /* funcion para que el colegio pueda remover a un alumno*/
     public removeStudent(pName:Student):any{
@@ -143,10 +147,12 @@ let teacherList:Teacher[]=[philosophyTeacher,mathTeacher,pshysicTeacher];
     /*Colegio */
 let college=new College('San Martin',teacherList,studentList1);
 let newTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
+let newStudent=college.enrollStudent('Juan','Blanco')
     /*Se prueban las instancias de cada objeto */
 console.log(pshysicTeacher.getTeacher());
 console.log(student1.getStudentNote('Matematica'));
 console.log(newTeacher);
 console.log(teacherList);
-console.log(college.fireTeacher(mathTeacher));
+console.log(college.fireTeacher(pshysicTeacher));
 console.log(college.removeStudent(student4));
+console.log(newStudent);
