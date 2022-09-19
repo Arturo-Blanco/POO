@@ -146,13 +146,13 @@ let pshysicTeacher=new Teacher('Mirta','Salvattori','Fisica',studentList1);
 let teacherList:Teacher[]=[philosophyTeacher,mathTeacher,pshysicTeacher];
     /*Colegio */
 let college=new College('San Martin',teacherList,studentList1);
-let newTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
-let newStudent=college.enrollStudent('Juan','Blanco')
+let scienceTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
+let student6=college.enrollStudent('Juan','Blanco')
     /*Se prueban las instancias de cada objeto */
 console.log(pshysicTeacher.getTeacher());
 console.log(student1.getStudentNote('Matematica'));
-console.log(newTeacher);
+console.log(scienceTeacher);
 console.log(teacherList);
 console.log(college.fireTeacher(pshysicTeacher));
 console.log(college.removeStudent(student4));
-console.log(newStudent);
+console.log(student6);
