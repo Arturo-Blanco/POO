@@ -16,7 +16,7 @@ class Student {
         this.name=newName;
         this.surname=newSurname;
     }
-    public getNameStudent():string{
+    public getStudentName():string{
         return this.name + ' ' +this.surname;
     }
     public setMathNote(pMathNote:number):void {
@@ -32,30 +32,30 @@ class Student {
     public getStudentNote(assignature:string):string{
         if(assignature==='Matematica'){
                 if(this.mathNote>=7) {
-            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.mathNote}.`;
+            return `${this.getStudentName()} aprobó ${assignature} con un ${this.mathNote}.`;
         } else {
-            return `${this.getNameStudent()} desaprobó ${assignature} con un ${this.mathNote}.`;
+            return `${this.getStudentName()} desaprobó ${assignature} con un ${this.mathNote}.`;
             }
         }
         if(assignature==='Fisica'){
                 if(this.pshysicsNote>=7) {
-            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.pshysicsNote}.`;
+            return `${this.getStudentName()} aprobó ${assignature} con un ${this.pshysicsNote}.`;
         } else {
-            return `${this.getNameStudent()} desaprobó ${assignature} con un ${this.pshysicsNote}.`;
+            return `${this.getStudentName()} desaprobó ${assignature} con un ${this.pshysicsNote}.`;
             }
         }
         if(assignature==='Filosofia') {
                 if(this.philosophyNote>=7) {
-            return `${this.getNameStudent()} aprobó ${assignature} con un ${this.philosophyNote}.`;
+            return `${this.getStudentName()} aprobó ${assignature} con un ${this.philosophyNote}.`;
         } else {
-            return `${this.getNameStudent()} desaprobó ${assignature} con un ${this.philosophyNote}.`;
+            return `${this.getStudentName()} desaprobó ${assignature} con un ${this.philosophyNote}.`;
             }
         }
         if(assignature===undefined) {
-            return `${this.getNameStudent()} ingrese una materia para saber su nota.`;
+            return `${this.getStudentName()} ingrese una materia para saber su nota.`;
         }
         else {
-            return `${this.getNameStudent()} no esta matriculado en la materia que busca, ingrese una materia valida.`;
+            return `${this.getStudentName()} no esta matriculado en la materia que busca, ingrese una materia valida.`;
         }
     }
 }
@@ -98,7 +98,7 @@ class College {
     }
     /* funcion para que el colegio pueda contratar a un nuevo profesor y asignarle sus alumnos */
     public hireNewTeacher(pName:string,pSurname:string,pAssignature:string):any{
-        let newTeacher=new Teacher(pName,pSurname,pAssignature,studentList1); 
+        let newTeacher=new Teacher(pName,pSurname,pAssignature,studentList); 
         this.teacherList.push(newTeacher);
         return `Se ah contratado al profesor ${pName+' '+pSurname} que se desempeña en la asignatura ${pAssignature}.`
     }
@@ -122,9 +122,9 @@ class College {
     }
     /* funcion para que el colegio pueda remover a un alumno*/
     public removeStudent(pName:Student):any{
-        let student=pName.getNameStudent();
+        let student=pName.getStudentName();
         for(let i:number=0;i<this.studentList.length;i++){
-            if(pName.getNameStudent() === this.studentList[i].getNameStudent()){
+            if(pName.getStudentName() === this.studentList[i].getStudentName()){
                 this.studentList.splice(i,1);
                     return `El alumno ${student} ah sido removido de la institución.`
             }
@@ -133,26 +133,34 @@ class College {
 }
 
     /* Listado de alumnos matriculados */
+    
 let student1=new Student('Juan','Rodriguez',9,7,5);
 let student2=new Student('Jose','Frias',6,9,5);
 let student3=new Student('Maria','Gutierrez',7,7,8);
 let student4=new Student('Leandro','Fernandez',2,10,5);
 let student5=new Student('Ana','Lencina',10,7,8);
-let studentList1:Student[]=[student1,student2,student3,student4,student5] ;
+let studentList:Student[]=[student1,student2,student3,student4,student5] ;
+
     /* Listado de profesores activos */
-let mathTeacher=new Teacher('Hernan','Ibarra','Matemática',studentList1);
-let philosophyTeacher=new Teacher('Salvador','Flores','Filosofia',studentList1);
-let pshysicTeacher=new Teacher('Mirta','Salvattori','Fisica',studentList1);
+
+let mathTeacher=new Teacher('Hernan','Ibarra','Matemática',studentList);
+let philosophyTeacher=new Teacher('Salvador','Flores','Filosofia',studentList);
+let pshysicTeacher=new Teacher('Mirta','Salvattori','Fisica',studentList);
 let teacherList:Teacher[]=[philosophyTeacher,mathTeacher,pshysicTeacher];
+
     /*Colegio */
-let college=new College('San Martin',teacherList,studentList1);
+
+let college=new College('San Martin',teacherList,studentList);
 let scienceTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
-let student6=college.enrollStudent('Juan','Blanco')
+let student6=college.enrollStudent('Juan','Blanco');
+
     /*Se prueban las instancias de cada objeto */
-console.log(pshysicTeacher.getTeacher());
+
+console.log(mathTeacher.getTeacher());
 console.log(student1.getStudentNote('Matematica'));
 console.log(scienceTeacher);
 console.log(teacherList);
+console.log(studentList);
 console.log(college.fireTeacher(pshysicTeacher));
 console.log(college.removeStudent(student4));
 console.log(student6);
