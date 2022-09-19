@@ -97,10 +97,11 @@ class College {
         this.collegeName=newCollegeName;
     }
     /* funcion para que el colegio pueda contratar a un nuevo profesor y asignarle sus alumnos */
-    public hireNewTeacher(pName:string,pSurname:string,pAssignature:string):any{
+    public hireNewTeacher(pName:string,pSurname:string,pAssignature:string):Teacher{
         let newTeacher=new Teacher(pName,pSurname,pAssignature,studentList); 
         this.teacherList.push(newTeacher);
-        return `Se ah contratado al profesor ${pName+' '+pSurname} que se desempeña en la asignatura ${pAssignature}.`
+        console.log(`Se ah contratado al profesor ${pName+' '+pSurname} que se desempeña en la asignatura ${pAssignature}.`);
+        return newTeacher;
     }
     /* funcion para que el colegio pueda despedir a un profesor*/
     public fireTeacher(pTeacher:Teacher):any{
@@ -115,25 +116,25 @@ class College {
         }
     }
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
-    public enrollStudent(pName:string,pSurname:string):string{
+    public enrollStudent(pName:string,pSurname:string):Student{
         let newStudent=new Student(pName,pSurname,0,0,0)
         this.studentList.push(newStudent);
-        return `Se ah matriculado al alumno ${pName+' '+pSurname}.`
+        console.log(`Se ah matriculado al alumno ${pName+' '+pSurname}.`);
+        return newStudent;
     }
     /* funcion para que el colegio pueda remover a un alumno*/
-    public removeStudent(pName:Student):any{
+    public removeStudent(pName:Student):string{
         let student=pName.getStudentName();
         for(let i:number=0;i<this.studentList.length;i++){
             if(pName.getStudentName() === this.studentList[i].getStudentName()){
                 this.studentList.splice(i,1);
-                    return `El alumno ${student} ah sido removido de la institución.`
             }
-        }
+        } return `El alumno ${student} ah sido removido de la institución.`
     }
 }
 
     /* Listado de alumnos matriculados */
-    
+
 let student1=new Student('Juan','Rodriguez',9,7,5);
 let student2=new Student('Jose','Frias',6,9,5);
 let student3=new Student('Maria','Gutierrez',7,7,8);
@@ -156,11 +157,11 @@ let student6=college.enrollStudent('Juan','Blanco');
 
     /*Se prueban las instancias de cada objeto */
 
-console.log(mathTeacher.getTeacher());
-console.log(student1.getStudentNote('Matematica'));
+console.log(scienceTeacher.getTeacher());
+console.log(student3.getStudentNote('Matematica'));
 console.log(scienceTeacher);
 console.log(teacherList);
 console.log(studentList);
 console.log(college.fireTeacher(pshysicTeacher));
 console.log(college.removeStudent(student4));
-console.log(student6);
+console.log(student6.getStudentName());
