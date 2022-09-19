@@ -104,17 +104,16 @@ class College {
         return newTeacher;
     }
     /* funcion para que el colegio pueda despedir a un profesor*/
-    public fireTeacher(pTeacher:Teacher):any{
+    public fireTeacher(pTeacher:Teacher):void{
         let teacher=pTeacher.getTeacher();
         for(let i= 0;i<this.teacherList.length;i++) {
             if(pTeacher.getTeacher()===this.teacherList[i].getTeacher()){
                 this.teacherList.splice(i,1);
-                    return `El profesor ${teacher} ah sido despedido.` 
-            } else {
-                return `El profesor ${teacher} no esta contratado en la institucion.`
-            }
+                    console.log(`El profesor ${teacher} Ah sido despedido.`);
+                break;
         }
     }
+}
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
     public enrollStudent(pName:string,pSurname:string):Student{
         let newStudent=new Student(pName,pSurname,0,0,0)
@@ -151,17 +150,18 @@ let teacherList:Teacher[]=[philosophyTeacher,mathTeacher,pshysicTeacher];
 
     /*Colegio */
 
-let college=new College('San Martin',teacherList,studentList);
-let scienceTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); 
-let student6=college.enrollStudent('Juan','Blanco');
+let college=new College('San Martin',teacherList,studentList); 
+let scienceTeacher=college.hireNewTeacher('Juan','Rodriguez','Ciencia'); /*Se crea un nuevo objeto Teacher*/
+let student6=college.enrollStudent('Juan','Blanco'); /*Se crea un nuevo objeto Student*/
 
     /*Se prueban las instancias de cada objeto */
 
-console.log(scienceTeacher.getTeacher());
-console.log(student3.getStudentNote('Matematica'));
-console.log(scienceTeacher);
-console.log(teacherList);
-console.log(studentList);
-console.log(college.fireTeacher(pshysicTeacher));
-console.log(college.removeStudent(student4));
-console.log(student6.getStudentName());
+console.log(scienceTeacher.getTeacher()); /*Se toma los datos del objeto teacher recien creado*/
+console.log(student3.getStudentNote('Matematica')); /*se toma las notas de un alumno*/
+console.log(teacherList);/*Se verifica si el nuevo objeto teacher se incorporo a la lista teacherList*/
+console.log(studentList);/*Se verifica si el nuevo objeto student se incorporo a la lista studentList*/
+console.log(college.removeStudent(student4)); /*Se elimina un objeto alumno*/
+console.log(studentList.length); /*se verifica si se elimino el objeto student*/
+college.fireTeacher(mathTeacher); /*se despide al profesor de matematica*/
+console.log(teacherList.length); /*se verifica si el objeto teacher se elimino de la lista teacherList*/
+
