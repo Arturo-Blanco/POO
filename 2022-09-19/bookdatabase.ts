@@ -24,7 +24,6 @@ class Book {
         public constructor(pBookList:Book[]) {
             this.bookList=pBookList;
         }
-        
         public insertNewBook(pName:string,pType:string,pAutor:string):Book {
             let newBook=new Book(pName,pType,pAutor);
             this.bookList.push(newBook);
@@ -35,3 +34,5 @@ class Book {
         
         }
     }
+    let book1=new Book('Señor de los anillos','Ciencia Ficcion','Pepe');
+    
