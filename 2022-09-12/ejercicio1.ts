@@ -97,11 +97,11 @@ class College {
         this.collegeName=newCollegeName;
     }
     /* funcion para que el colegio pueda contratar a un nuevo profesor y asignarle sus alumnos */
-    public hireNewTeacher(pName:string,pSurname:string,pAssignature:string):Teacher{
+    public hireNewTeacher(pName:string,pSurname:string,pAssignature:string):void{
         let newTeacher=new Teacher(pName,pSurname,pAssignature,studentList); 
         this.teacherList.push(newTeacher);
         console.log(`Se ah contratado al profesor ${pName+' '+pSurname} que se desempeña en la asignatura ${pAssignature}.`);
-        return newTeacher;
+        //return newTeacher;
     }
     /* funcion para que el colegio pueda despedir a un profesor*/
     public fireTeacher(pTeacher:Teacher):void{
@@ -110,25 +110,24 @@ class College {
             if(pTeacher.getTeacher()===this.teacherList[i].getTeacher()){
                 this.teacherList.splice(i,1);
                     console.log(`El profesor ${teacher} Ah sido despedido.`);
-                break;
         }
     }
 }
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
-    public enrollStudent(pName:string,pSurname:string):Student{
+    public enrollStudent(pName:string,pSurname:string):void{
         let newStudent=new Student(pName,pSurname,0,0,0)
         this.studentList.push(newStudent);
         console.log(`Se ah matriculado al alumno ${pName+' '+pSurname}.`);
-        return newStudent;
+       // return newStudent
     }
     /* funcion para que el colegio pueda remover a un alumno*/
-    public removeStudent(pName:Student):string{
+    public removeStudent(pName:Student):void{
         let student=pName.getStudentName();
         for(let i:number=0;i<this.studentList.length;i++){
             if(pName.getStudentName() === this.studentList[i].getStudentName()){
                 this.studentList.splice(i,1);
             }
-        } return `El alumno ${student} ah sido removido de la institución.`
+        } console.log(`El alumno ${student} ah sido removido de la institución.`);
     }
 }
 
@@ -156,7 +155,6 @@ let student6=college.enrollStudent('Juan','Blanco'); /*Se crea un nuevo objeto S
 
     /*Se prueban las instancias de cada objeto */
 
-console.log(scienceTeacher.getTeacher()); /*Se toma los datos del objeto teacher recien creado*/
 console.log(student3.getStudentNote('Matematica')); /*se toma las notas de un alumno*/
 console.log(teacherList);/*Se verifica si el nuevo objeto teacher se incorporo a la lista teacherList*/
 console.log(studentList);/*Se verifica si el nuevo objeto student se incorporo a la lista studentList*/
