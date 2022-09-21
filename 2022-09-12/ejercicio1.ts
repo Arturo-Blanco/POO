@@ -5,12 +5,25 @@ class Student {
     private pshysicsNote:number;
     private philosophyNote:number;
 
-    public constructor(pName:string,pSurname:string,pMathNote:number,pPshysicsNote:number,pPhilosophyNote:number){
+    public constructor(pName:string,pSurname:string,pMathNote?:number,pPshysicsNote?:number,pPhilosophyNote?:number){
         this.name = pName;
         this.surname = pSurname;
+
+    if(pMathNote==undefined) {
+        pMathNote
+    } else {
         this.mathNote=pMathNote;
+    }
+    if(pPshysicsNote==undefined) {
+        pPshysicsNote
+    } else {
         this.pshysicsNote=pPshysicsNote;
+    }
+    if(pPhilosophyNote==undefined) {
+        pPhilosophyNote
+    } else {
         this.philosophyNote=pPhilosophyNote;
+    }
     }
     public setStudent(newName:string,newSurname:string):void {
         this.name=newName;
@@ -105,29 +118,27 @@ class College {
     }
     /* funcion para que el colegio pueda despedir a un profesor*/
     public fireTeacher(pTeacher:Teacher):void{
-        let teacher=pTeacher.getTeacher();
         for(let i= 0;i<this.teacherList.length;i++) {
             if(pTeacher.getTeacher()===this.teacherList[i].getTeacher()){
                 this.teacherList.splice(i,1);
-                    console.log(`El profesor ${teacher} Ah sido despedido.`);
+                    console.log(`El profesor ${pTeacher.getTeacher()} Ah sido despedido.`);
         }
     }
 }
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
     public enrollStudent(pName:string,pSurname:string):void{
-        let newStudent=new Student(pName,pSurname,0,0,0)
+        let newStudent=new Student(pName,pSurname)
         this.studentList.push(newStudent);
         console.log(`Se ah matriculado al alumno ${pName+' '+pSurname}.`);
        // return newStudent
     }
     /* funcion para que el colegio pueda remover a un alumno*/
     public removeStudent(pName:Student):void{
-        let student=pName.getStudentName();
         for(let i:number=0;i<this.studentList.length;i++){
             if(pName.getStudentName() === this.studentList[i].getStudentName()){
                 this.studentList.splice(i,1);
             }
-        } console.log(`El alumno ${student} ah sido removido de la institución.`);
+        } console.log(`El alumno ${pName.getStudentName()} ah sido removido de la institución.`);
     }
 }
 
@@ -158,7 +169,7 @@ let student6=college.enrollStudent('Juan','Blanco'); /*Se crea un nuevo objeto S
 console.log(student3.getStudentNote('Matematica')); /*se toma las notas de un alumno*/
 console.log(teacherList);/*Se verifica si el nuevo objeto teacher se incorporo a la lista teacherList*/
 console.log(studentList);/*Se verifica si el nuevo objeto student se incorporo a la lista studentList*/
-console.log(college.removeStudent(student4)); /*Se elimina un objeto alumno*/
+college.removeStudent(student1)
 console.log(studentList.length); /*se verifica si se elimino el objeto student*/
 college.fireTeacher(mathTeacher); /*se despide al profesor de matematica*/
 console.log(teacherList.length); /*se verifica si el objeto teacher se elimino de la lista teacherList*/
