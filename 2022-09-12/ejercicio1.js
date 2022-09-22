@@ -2,9 +2,21 @@ var Student = /** @class */ (function () {
     function Student(pName, pSurname, pMathNote, pPshysicsNote, pPhilosophyNote) {
         this.name = pName;
         this.surname = pSurname;
-        this.mathNote = pMathNote;
-        this.pshysicsNote = pPshysicsNote;
-        this.philosophyNote = pPhilosophyNote;
+        if (pMathNote == undefined) {
+        }
+        else {
+            this.mathNote = pMathNote;
+        }
+        if (pPshysicsNote == undefined) {
+        }
+        else {
+            this.pshysicsNote = pPshysicsNote;
+        }
+        if (pPhilosophyNote == undefined) {
+        }
+        else {
+            this.philosophyNote = pPhilosophyNote;
+        }
     }
     Student.prototype.setStudent = function (newName, newSurname) {
         this.name = newName;
@@ -91,35 +103,32 @@ var College = /** @class */ (function () {
         var newTeacher = new Teacher(pName, pSurname, pAssignature, studentList);
         this.teacherList.push(newTeacher);
         console.log("Se ah contratado al profesor ".concat(pName + ' ' + pSurname, " que se desempe\u00F1a en la asignatura ").concat(pAssignature, "."));
-        return newTeacher;
+        //return newTeacher;
     };
     /* funcion para que el colegio pueda despedir a un profesor*/
     College.prototype.fireTeacher = function (pTeacher) {
-        var teacher = pTeacher.getTeacher();
         for (var i = 0; i < this.teacherList.length; i++) {
             if (pTeacher.getTeacher() === this.teacherList[i].getTeacher()) {
                 this.teacherList.splice(i, 1);
-                console.log("El profesor ".concat(teacher, " Ah sido despedido."));
-                break;
+                console.log("El profesor ".concat(pTeacher.getTeacher(), " Ah sido despedido."));
             }
         }
     };
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
     College.prototype.enrollStudent = function (pName, pSurname) {
-        var newStudent = new Student(pName, pSurname, 0, 0, 0);
+        var newStudent = new Student(pName, pSurname);
         this.studentList.push(newStudent);
         console.log("Se ah matriculado al alumno ".concat(pName + ' ' + pSurname, "."));
-        return newStudent;
+        // return newStudent
     };
     /* funcion para que el colegio pueda remover a un alumno*/
     College.prototype.removeStudent = function (pName) {
-        var student = pName.getStudentName();
         for (var i = 0; i < this.studentList.length; i++) {
             if (pName.getStudentName() === this.studentList[i].getStudentName()) {
                 this.studentList.splice(i, 1);
             }
         }
-        return "El alumno ".concat(student, " ah sido removido de la instituci\u00F3n.");
+        console.log("El alumno ".concat(pName.getStudentName(), " ah sido removido de la instituci\u00F3n."));
     };
     return College;
 }());
@@ -140,11 +149,10 @@ var college = new College('San Martin', teacherList, studentList);
 var scienceTeacher = college.hireNewTeacher('Juan', 'Rodriguez', 'Ciencia'); /*Se crea un nuevo objeto Teacher*/
 var student6 = college.enrollStudent('Juan', 'Blanco'); /*Se crea un nuevo objeto Student*/
 /*Se prueban las instancias de cada objeto */
-console.log(scienceTeacher.getTeacher()); /*Se toma los datos del objeto teacher recien creado*/
 console.log(student3.getStudentNote('Matematica')); /*se toma las notas de un alumno*/
 console.log(teacherList); /*Se verifica si el nuevo objeto teacher se incorporo a la lista teacherList*/
 console.log(studentList); /*Se verifica si el nuevo objeto student se incorporo a la lista studentList*/
-console.log(college.removeStudent(student4)); /*Se elimina un objeto alumno*/
+college.removeStudent(student1);
 console.log(studentList.length); /*se verifica si se elimino el objeto student*/
 college.fireTeacher(mathTeacher); /*se despide al profesor de matematica*/
 console.log(teacherList.length); /*se verifica si el objeto teacher se elimino de la lista teacherList*/

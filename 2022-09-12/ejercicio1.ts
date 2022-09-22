@@ -5,25 +5,12 @@ class Student {
     private pshysicsNote:number;
     private philosophyNote:number;
 
-    public constructor(pName:string,pSurname:string,pMathNote?:number,pPshysicsNote?:number,pPhilosophyNote?:number){
+    public constructor(pName:string,pSurname:string,pMathNote:number,pPshysicsNote:number,pPhilosophyNote:number){
         this.name = pName;
         this.surname = pSurname;
-
-    if(pMathNote==undefined) {
-        pMathNote
-    } else {
         this.mathNote=pMathNote;
-    }
-    if(pPshysicsNote==undefined) {
-        pPshysicsNote
-    } else {
         this.pshysicsNote=pPshysicsNote;
-    }
-    if(pPhilosophyNote==undefined) {
-        pPhilosophyNote
-    } else {
         this.philosophyNote=pPhilosophyNote;
-    }
     }
     public setStudent(newName:string,newSurname:string):void {
         this.name=newName;
