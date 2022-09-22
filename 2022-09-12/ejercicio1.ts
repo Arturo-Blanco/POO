@@ -114,7 +114,7 @@ class College {
 }
     /* funcion para que el colegio pueda matricular a un nuevo alumno*/
     public enrollStudent(pName:string,pSurname:string):void{
-        let newStudent=new Student(pName,pSurname)
+        let newStudent=new Student(pName,pSurname,0,0,0)
         this.studentList.push(newStudent);
         console.log(`Se ah matriculado al alumno ${pName+' '+pSurname}.`);
        // return newStudent
