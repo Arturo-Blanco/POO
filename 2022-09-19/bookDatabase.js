@@ -3,12 +3,11 @@ exports.__esModule = true;
 /*se importa npm para leer archivos del sistema*/
 var fs = require("fs");
 var Book = /** @class */ (function () {
-    function Book(pBookName, pBookAuthor, pBookType, pBookYear, pBookContent) {
+    function Book(pBookName, pBookAuthor, pBookType, pBookYear) {
         this.bookName = pBookName;
         this.bookType = pBookType;
         this.bookAuthor = pBookAuthor;
         this.bookYear = pBookYear;
-        this.bookContent = pBookContent;
     }
     Book.prototype.getBookName = function () {
         return this.bookName;
@@ -117,12 +116,12 @@ var BookManager = /** @class */ (function () {
     return BookManager;
 }());
 /* se crea objetos libros */
-var book1 = new Book('Viaje al fin de la noche', 'Louis-Ferdinand Céline', 'Novela', 1932, 'book1');
-var book2 = new Book('Don Quijote de la Mancha', 'Miguel de Cervantes', 'Novela', 1605, 'book2');
+var book1 = new Book('Viaje al fin de la noche', 'Louis-Ferdinand Céline', 'Novela', 1932);
+var book2 = new Book('Don Quijote de la Mancha', 'Miguel de Cervantes', 'Novela', 1605);
 /* se crea lista de libros */
 var bookList1 = [book1, book2];
 /* se crea un libro nuevo */
-var book3 = new Book('Los cuentos de Canterbury', 'Geoffrey Chaucer', 'Novela', 1882, 'book3');
+var book3 = new Book('Los cuentos de Canterbury', 'Geoffrey Chaucer', 'Novela', 1882);
 /* se crea un objeto Gestor */
 var newManager = new BookManager('Gestor uno', bookList1);
 /* se inserta un libro nuevo al Gestor */
@@ -132,4 +131,4 @@ newManager.consultBook(book2);
 /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
 console.log(bookList1.length);
 /* se lee libro guardado en .txt */
-newManager.readBook(book3);
+newManager.readBook(book1);

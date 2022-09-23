@@ -8,12 +8,11 @@ class Book {
     private bookYear:any;
     private bookContent:string;
 
-    public constructor(pBookName:string,pBookAuthor:string,pBookType:string,pBookYear:number,pBookContent:string){
+    public constructor(pBookName:string,pBookAuthor:string,pBookType:string,pBookYear:number){
         this.bookName=pBookName;
         this.bookType=pBookType;
         this.bookAuthor=pBookAuthor;
         this.bookYear=pBookYear;
-        this.bookContent=pBookContent;
     }
 
     public getBookName():string{
@@ -124,12 +123,12 @@ class BookManager {
     }
 }
     /* se crea objetos libros */
-    let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932,'book1');
-    let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605,'book2');
+    let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932);
+    let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605);
     /* se crea lista de libros */
     let bookList1:Book[]=[book1,book2];
     /* se crea un libro nuevo */
-    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882,'book3');
+    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882);
     /* se crea un objeto Gestor */
     let newManager=new BookManager('Gestor uno',bookList1);
     /* se inserta un libro nuevo al Gestor */
@@ -139,4 +138,4 @@ class BookManager {
     /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
     console.log(bookList1.length);
     /* se lee libro guardado en .txt */
-    newManager.readBook(book3)
+    newManager.readBook(book1)
