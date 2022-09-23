@@ -1,3 +1,12 @@
+    /*se importa npm para leer archivos del sistema*/
+import * as fs from 'fs';
+    /*se declara variable para llamar a cada archivo .txt*/
+let textBook1:string=fs.readFileSync('book1.txt','utf-8');
+let textBook2:string=fs.readFileSync('book2.txt','utf-8');
+let textBook3:string=fs.readFileSync('book3.txt','utf-8'); 
+    /*se crea un libreria para leer*/       
+let library:string[]=[textBook1,textBook2,textBook3];
+
 class Book {
     private bookName: string;
     private bookType:string;
@@ -55,68 +64,84 @@ class BookManager {
     public setManagerName(newManagerName:string):void{
         this.managerName=newManagerName;
     }
-    public insertNewBook(pName:string,pAutor:string,pType:string,pYear:number):void {
-        let newBook=new Book(pName,pAutor,pType,pYear);
-            this.bookList.push(newBook);
-                console.log(`Se ah añadido el libro ${pName}, del autor ${pAutor}, de tipo ${pType}, publicado el año ${pYear}`);
+    /*funcion para insertar un nuevo libro */
+    public insertNewBook(pBook:Book):void{
+            this.bookList.push(pBook);
+        console.log(`Se ah añadido el libro ${pBook.getBookName()}, del autor ${pBook.getBookAuthor()}.`);
     }
+    /*funcion para consultar por un libro*/
     public consultBook(pBook:Book):any{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook.getBookName()===this.bookList[i].getBookName()) {
-                break;
             } 
         } 
     console.log(`El libro se llama ${pBook.getBookName()}, escrito por ${pBook.getBookAuthor()}, del género ${pBook.getBookType()}, publicado el año ${pBook.getBookYear()}.`);   
     }
+    /*funcion para modificar el nombre de un libro*/
     public modifyName(pBook:Book,pNewName:string):void{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook==this.bookList[i] && this.bookList[i].getBookName()!= pNewName) {
                 this.bookList[i].setBookName(pNewName);
-                    break;
             }
         }
     }
+    /*funcion para modificar el tipo de un libro*/
     public modifyType(pBook:Book,pNewType:string):void{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook==this.bookList[i] && this.bookList[i].getBookType()!= pNewType) {
                 this.bookList[i].setBookType(pNewType);
-                    break;
             }
         }
     }
+    /*funcion para modificar el autor de un libro*/
     public modifyAuthor(pBook:Book,pNewAuthor:string):void{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook==this.bookList[i] && this.bookList[i].getBookAuthor()!= pNewAuthor) {
                 this.bookList[i].setBookAuthor(pNewAuthor);
-                    break;
             }
         }
     }
+    /*funcion para modificar el año de publicacion de un libro*/
     public modifyYear(pBook:Book,pNewYear:number):void{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook==this.bookList[i] && this.bookList[i].getBookYear()!= pNewYear) {
                 this.bookList[i].setBookYear(pNewYear);
-                    break;
             }
         }
     }
-    public deleteBook(pbook:Book):void{
+    /*funcion para eliminar un libro*/
+    public deleteBook(pBook:Book):void{
         for(let i:number=0;i<this.bookList.length;i++) {
-            if(pbook==this.bookList[i]){
+            if(pBook==this.bookList[i]){
                 this.bookList.splice(i,1);
-                break;
             }
-        } console.log(`Se ha eliminado el libro ${pbook.getBookName()}, del autor ${pbook.getBookAuthor()}.`);
+        } console.log(`Se ha eliminado el libro ${pBook.getBookName()}, del autor ${pBook.getBookAuthor()}.`);
+    }
+    /*funcion para leer un libro*/
+    public readBook(pBook:Book):any{
+        for(let i:number=0;i<this.bookList.length;i++) {
+            if(pBook==this.bookList[i]) {
+                return library[i];
+            }
+        }
     }
 }
-
+    /* se crea objetos libros */
     let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932);
     let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605);
+    /* se crea lista de libros */
     let bookList1:Book[]=[book1,book2];
-    
+    /* se crea un libro nuevo */
+    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882);
+    /* se crea un objeto Gestor */
     let newManager=new BookManager('Gestor uno',bookList1);
-    let book3=newManager.insertNewBook('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882);
+    /* se inserta un libro nuevo al Gestor */
+    newManager.insertNewBook(book3);
+    /* se consulta por un libro */
     newManager.consultBook(book2);
+    /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
     console.log(bookList1.length);
-    newManager.deleteBook(book1);
+    //newManager.deleteBook(book2);
+    /* se lee libro guardado en .txt */
+    console.log(newManager.readBook(book1));
     
