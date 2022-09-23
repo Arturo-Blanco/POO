@@ -2,23 +2,13 @@
 exports.__esModule = true;
 /*se importa npm para leer archivos del sistema*/
 var fs = require("fs");
-/*se declara variable para llamar a cada archivo .txt*/
-var textBook1 = fs.readFileSync('book1.txt', 'utf-8');
-var textBook2 = fs.readFileSync('book2.txt', 'utf-8');
-var textBook3 = fs.readFileSync('book3.txt', 'utf-8');
-/*se crea un libreria para leer*/
-var library = [textBook1, textBook2, textBook3];
 var Book = /** @class */ (function () {
-    function Book(pBookName, pBookAuthor, pBookType, pBookYear) {
+    function Book(pBookName, pBookAuthor, pBookType, pBookYear, pBookContent) {
         this.bookName = pBookName;
         this.bookType = pBookType;
         this.bookAuthor = pBookAuthor;
-        if (pBookYear == undefined) {
-            this.bookYear = '"no se conoce el año del libro"';
-        }
-        else {
-            this.bookYear = pBookYear;
-        }
+        this.bookYear = pBookYear;
+        this.bookContent = pBookContent;
     }
     Book.prototype.getBookName = function () {
         return this.bookName;
@@ -31,6 +21,9 @@ var Book = /** @class */ (function () {
     };
     Book.prototype.getBookYear = function () {
         return this.bookYear;
+    };
+    Book.prototype.getBookContent = function () {
+        return this.bookContent;
     };
     Book.prototype.setBookName = function (pName) {
         this.bookName = pName;
@@ -113,21 +106,23 @@ var BookManager = /** @class */ (function () {
     };
     /*funcion para leer un libro*/
     BookManager.prototype.readBook = function (pBook) {
+        var bookRead;
         for (var i = 0; i < this.bookList.length; i++) {
             if (pBook == this.bookList[i]) {
-                return library[i];
+                bookRead = fs.readFileSync('2022-09-19/bookContent/' + pBook.getBookName() + '.txt', 'utf-8');
+                console.log(bookRead);
             }
         }
     };
     return BookManager;
 }());
 /* se crea objetos libros */
-var book1 = new Book('Viaje al fin de la noche', 'Louis-Ferdinand Céline', 'Novela', 1932);
-var book2 = new Book('Don Quijote de la Mancha', 'Miguel de Cervantes', 'Novela', 1605);
+var book1 = new Book('Viaje al fin de la noche', 'Louis-Ferdinand Céline', 'Novela', 1932, 'book1');
+var book2 = new Book('Don Quijote de la Mancha', 'Miguel de Cervantes', 'Novela', 1605, 'book2');
 /* se crea lista de libros */
 var bookList1 = [book1, book2];
 /* se crea un libro nuevo */
-var book3 = new Book('Los cuentos de Canterbury', 'Geoffrey Chaucer', 'Novela', 1882);
+var book3 = new Book('Los cuentos de Canterbury', 'Geoffrey Chaucer', 'Novela', 1882, 'book3');
 /* se crea un objeto Gestor */
 var newManager = new BookManager('Gestor uno', bookList1);
 /* se inserta un libro nuevo al Gestor */
@@ -136,6 +131,5 @@ newManager.insertNewBook(book3);
 newManager.consultBook(book2);
 /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
 console.log(bookList1.length);
-//newManager.deleteBook(book2);
 /* se lee libro guardado en .txt */
-console.log(newManager.readBook(book1));
+newManager.readBook(book3);
