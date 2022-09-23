@@ -1,9 +1,6 @@
     /*se importa npm para leer archivos del sistema*/
 import * as fs from 'fs';
-    /*se declara variable para llamar a cada archivo .txt*/
-let textBook1:string=fs.readFileSync('2022-09-19/bookContent/book1.txt','utf-8');
-let textBook2:string=fs.readFileSync('2022-09-19/bookContent/book2.txt','utf-8');
-let textBook3:string=fs.readFileSync('2022-09-19/bookContent/book3.txt','utf-8'); 
+
 class Book {
     private bookName: string;
     private bookType:string;
@@ -117,20 +114,22 @@ class BookManager {
     }
     /*funcion para leer un libro*/
     public readBook(pBook:Book):void{
+        let bookRead:string;
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook==this.bookList[i]) {
-            console.log(pBook.getBookContent());
+            bookRead=fs.readFileSync('2022-09-19/bookContent/'+pBook.getBookName()+'.txt','utf-8')
+            console.log(bookRead);
             }
         }
     }
 }
     /* se crea objetos libros */
-    let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932,textBook1);
-    let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605,textBook2);
+    let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932,'book1');
+    let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605,'book2');
     /* se crea lista de libros */
     let bookList1:Book[]=[book1,book2];
     /* se crea un libro nuevo */
-    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882,textBook3);
+    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882,'book3');
     /* se crea un objeto Gestor */
     let newManager=new BookManager('Gestor uno',bookList1);
     /* se inserta un libro nuevo al Gestor */
@@ -140,4 +139,4 @@ class BookManager {
     /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
     console.log(bookList1.length);
     /* se lee libro guardado en .txt */
-    newManager.readBook(book3);
+    newManager.readBook(book3)
