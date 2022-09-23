@@ -21,9 +21,6 @@ var Book = /** @class */ (function () {
     Book.prototype.getBookYear = function () {
         return this.bookYear;
     };
-    Book.prototype.getBookContent = function () {
-        return this.bookContent;
-    };
     Book.prototype.setBookName = function (pName) {
         this.bookName = pName;
     };
