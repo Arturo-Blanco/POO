@@ -1,29 +1,24 @@
     /*se importa npm para leer archivos del sistema*/
 import * as fs from 'fs';
     /*se declara variable para llamar a cada archivo .txt*/
-let textBook1:string=fs.readFileSync('book1.txt','utf-8');
-let textBook2:string=fs.readFileSync('book2.txt','utf-8');
-let textBook3:string=fs.readFileSync('book3.txt','utf-8'); 
-    /*se crea un libreria para leer*/       
-let library:string[]=[textBook1,textBook2,textBook3];
-
+let textBook1:string=fs.readFileSync('2022-09-19/bookContent/book1.txt','utf-8');
+let textBook2:string=fs.readFileSync('2022-09-19/bookContent/book2.txt','utf-8');
+let textBook3:string=fs.readFileSync('2022-09-19/bookContent/book3.txt','utf-8'); 
 class Book {
     private bookName: string;
     private bookType:string;
     private bookAuthor:string;
     private bookYear:any;
+    private bookContent:string;
 
-    public constructor(pBookName:string,pBookAuthor:string,pBookType:string,pBookYear?:number){
+    public constructor(pBookName:string,pBookAuthor:string,pBookType:string,pBookYear:number,pBookContent:string){
         this.bookName=pBookName;
         this.bookType=pBookType;
         this.bookAuthor=pBookAuthor;
-
-        if(pBookYear==undefined){
-            this.bookYear='"no se conoce el año del libro"'
-        }   else {
-            this.bookYear=pBookYear;
-        }
+        this.bookYear=pBookYear;
+        this.bookContent=pBookContent;
     }
+
     public getBookName():string{
         return this.bookName;
     }
@@ -35,6 +30,9 @@ class Book {
     }
     public getBookYear():number{
         return this.bookYear;
+    }
+    public getBookContent():string{
+        return this.bookContent;
     }
     public setBookName(pName:string):void{
         this.bookName=pName;
@@ -70,7 +68,7 @@ class BookManager {
         console.log(`Se ah añadido el libro ${pBook.getBookName()}, del autor ${pBook.getBookAuthor()}.`);
     }
     /*funcion para consultar por un libro*/
-    public consultBook(pBook:Book):any{
+    public consultBook(pBook:Book):void{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook.getBookName()===this.bookList[i].getBookName()) {
             } 
@@ -118,21 +116,21 @@ class BookManager {
         } console.log(`Se ha eliminado el libro ${pBook.getBookName()}, del autor ${pBook.getBookAuthor()}.`);
     }
     /*funcion para leer un libro*/
-    public readBook(pBook:Book):any{
+    public readBook(pBook:Book):void{
         for(let i:number=0;i<this.bookList.length;i++) {
             if(pBook==this.bookList[i]) {
-                return library[i];
+            console.log(pBook.getBookContent());
             }
         }
     }
 }
     /* se crea objetos libros */
-    let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932);
-    let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605);
+    let book1=new Book('Viaje al fin de la noche','Louis-Ferdinand Céline','Novela',1932,textBook1);
+    let book2=new Book('Don Quijote de la Mancha','Miguel de Cervantes','Novela',1605,textBook2);
     /* se crea lista de libros */
     let bookList1:Book[]=[book1,book2];
     /* se crea un libro nuevo */
-    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882);
+    let book3=new Book('Los cuentos de Canterbury','Geoffrey Chaucer','Novela',1882,textBook3);
     /* se crea un objeto Gestor */
     let newManager=new BookManager('Gestor uno',bookList1);
     /* se inserta un libro nuevo al Gestor */
@@ -141,7 +139,5 @@ class BookManager {
     newManager.consultBook(book2);
     /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
     console.log(bookList1.length);
-    //newManager.deleteBook(book2);
     /* se lee libro guardado en .txt */
-    console.log(newManager.readBook(book1));
-    
+    newManager.readBook(book3);
