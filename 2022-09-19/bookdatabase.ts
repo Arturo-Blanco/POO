@@ -5,7 +5,7 @@ class Book {
     private bookName: string;
     private bookType:string;
     private bookAuthor:string;
-    private bookYear:any;
+    private bookYear:number;
 
     public constructor(pBookName:string,pBookAuthor:string,pBookType:string,pBookYear:number){
         this.bookName=pBookName;
