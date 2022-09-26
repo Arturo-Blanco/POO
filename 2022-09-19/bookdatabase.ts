@@ -1,6 +1,5 @@
     /*se importa npm para leer archivos del sistema*/
 import * as fs from 'fs';
-
 class Book {
     private bookName: string;
     private bookType:string;
@@ -13,7 +12,6 @@ class Book {
         this.bookAuthor=pBookAuthor;
         this.bookYear=pBookYear;
     }
-
     public getBookName():string{
         return this.bookName;
     }
@@ -39,7 +37,6 @@ class Book {
         this.bookYear=pYear;
     }
 }
-
 class BookManager {
     private managerName:string;
     private bookList:Book[];
@@ -134,4 +131,6 @@ class BookManager {
     /* se verifica la longitud de la lista para verificar si fue insertado el nuevo objeto libro*/
     console.log(bookList1.length);
     /* se lee libro guardado en .txt */
-    newManager.readBook(book1)
+    newManager.readBook(book2)
+
+    
