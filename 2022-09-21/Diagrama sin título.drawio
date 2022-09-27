@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-27T00:54:11.491Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="wsVNtgPv8Kk87wCxP5yk" version="20.3.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-09-27T00:57:03.397Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36" etag="fQ49APq0Ih0ise9odOEr" version="20.3.6" type="github" pages="2">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
     <mxGraphModel dx="1422" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" background="none" math="0" shadow="0">
       <root>
@@ -86,7 +86,7 @@
           <mxGeometry y="554" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Vqm908BKQOVYGzbheek5-49" value="class carObjet" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="650" width="160" height="86" as="geometry" />
+          <mxGeometry x="210" y="770" width="160" height="86" as="geometry" />
         </mxCell>
         <mxCell id="Vqm908BKQOVYGzbheek5-50" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Vqm908BKQOVYGzbheek5-49">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
@@ -98,7 +98,7 @@
           <mxGeometry y="60" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Vqm908BKQOVYGzbheek5-53" value="class bicycleObjet" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="530" y="760" width="160" height="86" as="geometry" />
+          <mxGeometry x="530" y="830" width="160" height="86" as="geometry" />
         </mxCell>
         <mxCell id="Vqm908BKQOVYGzbheek5-54" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Vqm908BKQOVYGzbheek5-53">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
@@ -110,7 +110,7 @@
           <mxGeometry y="60" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="Vqm908BKQOVYGzbheek5-57" value="class truckObjet" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="860" y="650" width="160" height="86" as="geometry" />
+          <mxGeometry x="880" y="770" width="160" height="86" as="geometry" />
         </mxCell>
         <mxCell id="Vqm908BKQOVYGzbheek5-58" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="Vqm908BKQOVYGzbheek5-57">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
