@@ -16,7 +16,7 @@ export class Vehicle {
         this.vehiclePatent=pPatent;
         this.fuelType=pFuelType; 
 
-        if(pEngine==undefined){
+        if(pEngine==true){
         console.log('El vehiculo tiene motor');
         } else {
         console.log('El vehiculo no tiene motor');

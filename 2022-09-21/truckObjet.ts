@@ -20,5 +20,7 @@ export class Truck extends Vehicle {
     }
 }   
     let truck1=new Truck('Volvo','Genesis',2016,'Gris','AA323XV','Euro');
-    console.log(truck1);
+    let truck2=new Truck('Mercedez Benz','Actros',2020,'Rojo','AE753TC','Euro');
+    let truck3=new Truck('Iveco','Daily',2018,'Azul','AB845UN','Euro');
+    let registeredTruck:Truck[]=[truck1,truck2,truck3];
     
