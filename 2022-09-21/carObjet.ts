@@ -1,54 +1,21 @@
-class Car {
-    private swichetOn:boolean;
-    private brand:string;
-    private model:string;
-    private year:number;
-    private colour:string;
-    private vehicle:string;
-    private fuelType:string;
-    private vehiclePatent:string;
+import { Vehicle } from './automotiveObjet';
 
-    constructor(pVehicle:string,pBrand:string,pModel:string,pColour:string,pYear:number,pTatent,pFuelType?:string){
-        this.vehicle=pVehicle;
-        this.brand=pBrand;
-        this.model=pModel;
-        this.colour=pColour;
-        this.year=pYear;
-        this.vehiclePatent=pTatent;
-    if(pFuelType!==undefined) {
-        this.fuelType==pFuelType;
-        }
+export class Car extends Vehicle {
+    private trunkSize:string;
+
+    public constructor(pBrand:string,pModel:string,pYear:number,pColour:string,pPatent:string,pFuelType:string,pTrunkSize:string,pEngine?:boolean){
+    super(pBrand,pModel,pYear,pColour,pPatent,pFuelType,pEngine);
+    this.trunkSize=pTrunkSize;
     }
-    public swichetOnOff():void{
-    if(this.swichetOn===true){
-        this.swichetOn=false;
-    }else{
-        this.swichetOn=true;
+    public getTrunkSize():string{
+        return `La capacidad del tanque es de ${this.trunkSize} litros`;
+    }
+    public setTrunkSize(newSize:string):void{
+        this.trunkSize=newSize;
     }
 }
-    public getVehicle(): string {
-    return this.brand+ ' ' +this.model;
-    }
-    public getYear():number{
-        return this.year;
-    }
-    public getColour():string {
-        return this.colour;
-    }
-    public getVehicleType():string {
-        return this.vehicle;
-    }
-    public getFuelType():string{ 
-    return this.fuelType;
-    }
-    public getVehiclePatent():string{
-    return this.vehiclePatent;
-    }
-}
-let car1=new Car('Auto','Volkswagen','Gol','Azul',2018,'AC391TY','Nafta');
-let car2=new Car('Camioneta','Toyota','Hilux','Negro',2016,'AA423OP','Gasoil');
-let car3=new Car('Auto','Fiat','Palio','Blanco',2019,'AD153CV','Nafta');
-let car4=new Car('SUV','Chevrolet','Tracker','Rojo',2022,'AF323ME','Gasoil');
+let car1=new Car('Volkswagen','Gol',2018,'Rojo','AC391TY','Nafta','480l');
+let car2=new Car('Toyota','Hilux',2016,'Negro','AA423OP','Gasoil','10050l');
+let car3=new Car('Fiat','Palio',2019,'Blanco','AD153CV','Nafta','480l');
+let car4=new Car('Chevrolet','Tracker',2022,'Rojo','AF323ME','Gasoil','850l')
 let registeredCars:Car[]=[car1,car2,car3,car4];
-
-export {Car};
