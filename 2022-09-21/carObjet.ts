@@ -14,8 +14,8 @@ export class Car extends Vehicle {
         this.trunkSize=newSize;
     }
 }
-let car1=new Car('Volkswagen','Gol',2018,'Rojo','AC391TY','Nafta','480l');
-let car2=new Car('Toyota','Hilux',2016,'Negro','AA423OP','Gasoil','10050l');
-let car3=new Car('Fiat','Palio',2019,'Blanco','AD153CV','Nafta','480l');
+let car1:Car=new Car('Volkswagen','Gol',2018,'Rojo','AC391TY','Nafta','480l');
+let car2:Car=new Car('Toyota','Hilux',2016,'Negro','AA423OP','Gasoil','10050l');
+let car3:Car=new Car('Fiat','Palio',2019,'Blanco','AD153CV','Nafta','480l');
 let car4=new Car('Chevrolet','Tracker',2022,'Rojo','AF323ME','Gasoil','850l')
 

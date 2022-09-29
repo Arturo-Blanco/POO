@@ -8,7 +8,7 @@ export class Vehicle {
     protected wheelNumbers:number;
     protected engine:boolean;
 
-    public constructor(pBrand:string,pModel:string,pYear:number,pColour:string,pPatent:string,pFuelType:string,pEngine?:boolean){
+    protected constructor(pBrand:string,pModel:string,pYear:number,pColour:string,pPatent:string,pFuelType:string,pEngine?:boolean){
         this.brand=pBrand;
         this.model=pModel;
         this.year=pYear;
@@ -22,23 +22,41 @@ export class Vehicle {
         console.log('El vehiculo no tiene motor');
         }
     }
-    public getBrand():string{
+    protected getBrand():string{
         return this.brand;
-        }
-    public getModel():string{
-        return this.model;
-            }
-    public getYear():number{
-            return this.year;
-        }
-    public getColour():string {
-            return this.colour;
-        }
-    public getFuelType():string{ 
-        return this.fuelType;
-        }
-    public getVehiclePatent():string{
-        return this.vehiclePatent;
-        }
     }
+    protected getModel():string{
+        return this.model;
+    }
+    protected getYear():number{
+            return this.year;
+    }
+    protected getColour():string {
+            return this.colour;
+    }
+    protected getFuelType():string{ 
+        return this.fuelType;
+    }
+    protected getVehiclePatent():string{
+        return this.vehiclePatent;
+    }
+    protected setBrand(newBrand:string):void{
+        this.brand=newBrand;
+    }
+    protected setModel(newModel:string):void{
+        this.model=newModel;
+    }
+    protected setYear(newYear:number):void{
+        this.year=newYear;
+    }
+    protected setColour(newColour:string):void{
+        this.colour=newColour;
+    }
+    protected setFuelType(newFuelType:string):void{ 
+        this.fuelType=newFuelType;
+    }
+    protected setVehiclePatent(newPatent:string):void{
+        this.vehiclePatent=newPatent;
+    }
+}
 
