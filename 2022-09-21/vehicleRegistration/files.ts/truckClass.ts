@@ -1,4 +1,4 @@
-import { Vehicle } from "./automotiveObjet";
+import { Vehicle } from "./automotiveClass";
 
 export class Truck extends Vehicle {
     private trailer:string;

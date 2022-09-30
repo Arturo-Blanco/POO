@@ -1,4 +1,4 @@
-import { Vehicle } from "./automotiveObjet";
+import { Vehicle } from "./automotiveClass";
 
 export class Bicycle extends Vehicle {
     private spokesNumbers:number;

@@ -1,4 +1,4 @@
-import { Vehicle } from './automotiveObjet';
+import { Vehicle } from './automotiveClass';
 
 export class Car extends Vehicle {
     private trunkSize:string;
