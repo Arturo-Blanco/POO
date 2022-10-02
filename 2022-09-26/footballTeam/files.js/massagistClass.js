@@ -34,7 +34,7 @@ var Massagist = /** @class */ (function (_super) {
     };
     Massagist.prototype.massage = function (player) {
         for (var i = 0; i < footballerClass_1.footballPlayers.length; i++) {
-            if (player == this.footballPlayers[i]) {
+            if (player == footballerClass_1.footballPlayers[i]) {
                 console.log("Se realiz\u00F3 un masaje al jugador ".concat(player.getName()));
                 break;
             }
@@ -44,4 +44,4 @@ var Massagist = /** @class */ (function (_super) {
 }(personClass_1.Person));
 exports.Massagist = Massagist;
 exports.massagist1 = new Massagist('Pedro', 'Benitez', 40, 'Hombre', 1.65, 'Masajes descontracturantes', footballerClass_1.footballPlayers);
-console.log(Massagist.prototype.massage(2));
+console.log(Massagist.prototype.massage(footballerClass_1.footballPlayers[4]));

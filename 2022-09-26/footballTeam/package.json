@@ -1,0 +1,16 @@
+{
+  "name": "footballteam",
+  "version": "1.0.0",
+  "description": "footballteamClass",
+  "main": "files.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/Arturo-Blanco/POO/tree/master/2022-09-26/footballTeam"
+  },
+  "keywords": [],
+  "author": "Blanco Arturo",
+  "license": "ISC"
+}
