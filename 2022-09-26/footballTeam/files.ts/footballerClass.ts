@@ -12,7 +12,7 @@ export class Footballer extends Person{
         this.headline=pHeadline;
     }
     public getGamePosition():string{
-        return `El jugador ${this.getSurname()} juega en la pisicion ${this.gamePosition}`;
+        return `El jugador ${this.getSurname()} juega en la posicion ${this.gamePosition}`;
     }
     public getShirtNumber():any{
         return `El jugador ${this.getSurname()} usa la camiseta numero ${this.shirtNumber}`;

@@ -16,12 +16,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.technicalDirector1 = exports.TechnicalDirector = void 0;
-var personClass_1 = require("../files.js/personClass");
+var footballerClass_1 = require("../files.ts/footballerClass");
+var personClass_1 = require("../files.ts/personClass");
 var TechnicalDirector = /** @class */ (function (_super) {
     __extends(TechnicalDirector, _super);
-    function TechnicalDirector(pName, pSurname, pAge, pGender, pHeight, pFirstTeam) {
+    function TechnicalDirector(pName, pSurname, pAge, pGender, pHeight, pFirstTeam, pFootballer) {
         var _this = _super.call(this, pName, pSurname, pAge, pGender, pHeight) || this;
         _this.firstTeam = pFirstTeam;
+        _this.footballPlayers = pFootballer;
         return _this;
     }
     TechnicalDirector.prototype.getFirstTeam = function () {
@@ -36,16 +38,18 @@ var TechnicalDirector = /** @class */ (function (_super) {
         this.firstTeam = newState;
     };
     TechnicalDirector.prototype.changePlayer = function (player) {
-        if (player.getState() == true) {
-            player.setState(false);
-            console.log("El jugador ".concat(player.getName(), " va a la banca"));
-        }
-        else {
-            player.setState(true);
-            console.log("El jugador ".concat(player.getName(), " es titular"));
+        for (var i = 0; i < this.footballPlayers.length; i++) {
+            if (player == this.footballPlayers[i] && player.getState() == true) {
+                player.setState(false);
+                console.log("El jugador ".concat(player.getName(), " va a la banca"));
+            }
+            else {
+                player.setState(true);
+                console.log("El jugador ".concat(player.getName(), " es titular"));
+            }
         }
     };
     return TechnicalDirector;
 }(personClass_1.Person));
 exports.TechnicalDirector = TechnicalDirector;
-exports.technicalDirector1 = new TechnicalDirector('Juan', 'Rodriguez', 45, 'Hombre', 1.75, true);
+exports.technicalDirector1 = new TechnicalDirector('Juan', 'Rodriguez', 45, 'Hombre', 1.75, true, footballerClass_1.footballPlayers);

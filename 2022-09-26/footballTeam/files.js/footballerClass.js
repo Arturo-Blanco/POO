@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.footballPlayers = exports.Footballer = void 0;
-var personClass_1 = require("./personClass");
+var personClass_1 = require("../files.js/personClass");
 var Footballer = /** @class */ (function (_super) {
     __extends(Footballer, _super);
     function Footballer(pName, pSurname, pAge, pGender, pHeight, pGamePosition, pShirtNumber, pHeadline) {
@@ -27,7 +27,7 @@ var Footballer = /** @class */ (function (_super) {
         return _this;
     }
     Footballer.prototype.getGamePosition = function () {
-        return "El jugador ".concat(this.getSurname(), " juega en la pisicion ").concat(this.gamePosition);
+        return "El jugador ".concat(this.getSurname(), " juega en la posicion ").concat(this.gamePosition);
     };
     Footballer.prototype.getShirtNumber = function () {
         return "El jugador ".concat(this.getSurname(), " usa la camiseta numero ").concat(this.shirtNumber);
