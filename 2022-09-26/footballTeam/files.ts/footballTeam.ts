@@ -44,3 +44,4 @@ class FootballTeam {
     }
 }
 let Team1:FootballTeam=new FootballTeam('Talleres',technicalDirector1,footballPlayers,massagist1);
+console.log(Team1);

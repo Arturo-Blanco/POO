@@ -43,3 +43,4 @@ var FootballTeam = /** @class */ (function () {
     return FootballTeam;
 }());
 var Team1 = new FootballTeam('Talleres', dtClass_1.technicalDirector1, footballerClass_1.footballPlayers, massagistClass_1.massagist1);
+console.log(Team1);
