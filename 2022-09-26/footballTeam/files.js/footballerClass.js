@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.footballPlayers = exports.Footballer = void 0;
-var personClass_1 = require("../files.js/personClass");
+var personClass_1 = require("./personClass");
 var Footballer = /** @class */ (function (_super) {
     __extends(Footballer, _super);
     function Footballer(pName, pSurname, pAge, pGender, pHeight, pGamePosition, pShirtNumber, pHeadline) {
@@ -63,4 +63,4 @@ var footballer8 = new Footballer('Nicolas', 'Cortez', 32, 'Hombre', 1.72, 'Later
 var footballer9 = new Footballer('Sebastian', 'Messi', 28, 'Hombre', 1.70, 'Delantero', 10, false);
 var footballer10 = new Footballer('Cristian', 'Fernandez', 25, 'Hombre', 1.72, 'Delantero', 17, true);
 var footballer11 = new Footballer('Fabio', 'Perez', 32, 'Hombre', 1.68, 'Delantero', 15, true);
-exports.footballPlayers = [footballer1, footballer2, footballer3, footballer4, footballer5, footballer6, footballer6, footballer7, footballer8, footballer9, footballer10, footballer11];
+exports.footballPlayers = [footballer1, footballer2, footballer3, footballer4, footballer5, footballer6, footballer7, footballer8, footballer9, footballer10, footballer11];

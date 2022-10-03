@@ -33,6 +33,7 @@ var FootballTeam = /** @class */ (function () {
         for (var i = 0; i < this.footballPlayers.length; i++) {
             if (player == this.footballPlayers[i]) {
                 this.footballPlayers.splice(i, 1);
+                break;
             }
         }
         console.log("Se vendio al jugador ".concat(player.getSurname(), " ").concat(player.getName()));

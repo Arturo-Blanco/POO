@@ -16,8 +16,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.technicalDirector1 = exports.TechnicalDirector = void 0;
-var footballerClass_1 = require("../files.ts/footballerClass");
-var personClass_1 = require("../files.ts/personClass");
+var footballerClass_1 = require("./footballerClass");
+var personClass_1 = require("./personClass");
 var TechnicalDirector = /** @class */ (function (_super) {
     __extends(TechnicalDirector, _super);
     function TechnicalDirector(pName, pSurname, pAge, pGender, pHeight, pFirstTeam, pFootballer) {

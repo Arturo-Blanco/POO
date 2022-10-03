@@ -17,7 +17,7 @@ export class Massagist extends Person{
     public massage(player:Footballer):void{
         for(let i:number=0;i<footballPlayers.length;i++){
             if(player==this.footballPlayers[i]){
-        console.log(`Se realizó un masaje al jugador ${player.getName()}`);
+        console.log(`Se realizó un masaje al jugador ${player.getSurname()} ${player.getName()}`);
         break;
     }
 }
