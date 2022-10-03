@@ -1,13 +1,12 @@
-import { Footballer,footballPlayers } from './footballerClass';
+import { Footballer } from './footballerClass';
 import { Person } from "./personClass";
 export class TechnicalDirector extends Person {
     private firstTeam:boolean;
     private footballPlayers:Footballer[];
 
-    public constructor(pName:string,pSurname:string,pAge:number,pGender:string,pHeight:number,pFirstTeam:boolean,pFootballer:Footballer[]){
+    public constructor(pName:string,pSurname:string,pAge:number,pGender:string,pHeight:number,pFirstTeam:boolean){
         super(pName,pSurname,pAge,pGender,pHeight);
         this.firstTeam=pFirstTeam;
-        this.footballPlayers=pFootballer;
     }
     public getFirstTeam():any{
         if(this.firstTeam==true){
@@ -27,8 +26,7 @@ export class TechnicalDirector extends Person {
         } else {
             player.setState(true)
             console.log(`El jugador ${player.getName()} es titular`);
+            }
         }
     }
 }
-}
-export let technicalDirector1:TechnicalDirector=new TechnicalDirector('Juan','Rodriguez',45,'Hombre',1.75,true,footballPlayers);

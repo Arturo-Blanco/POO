@@ -1,8 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var dtClass_1 = require("./dtClass");
-var footballerClass_1 = require("./footballerClass");
-var massagistClass_1 = require("./massagistClass");
+exports.FootballTeam = void 0;
 var FootballTeam = /** @class */ (function () {
     function FootballTeam(pNameTeam, pTechnicalDirector, pFootballPlayers, pMassagist) {
         this.nameTeam = pNameTeam;
@@ -33,7 +31,6 @@ var FootballTeam = /** @class */ (function () {
         for (var i = 0; i < this.footballPlayers.length; i++) {
             if (player == this.footballPlayers[i]) {
                 this.footballPlayers.splice(i, 1);
-                break;
             }
         }
         console.log("Se vendio al jugador ".concat(player.getSurname(), " ").concat(player.getName()));
@@ -43,5 +40,4 @@ var FootballTeam = /** @class */ (function () {
     };
     return FootballTeam;
 }());
-var Team1 = new FootballTeam('Talleres', dtClass_1.technicalDirector1, footballerClass_1.footballPlayers, massagistClass_1.massagist1);
-console.log(Team1);
+exports.FootballTeam = FootballTeam;

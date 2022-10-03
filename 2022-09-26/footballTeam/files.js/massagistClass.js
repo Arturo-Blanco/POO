@@ -15,15 +15,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.massagist1 = exports.Massagist = void 0;
-var footballerClass_1 = require("./footballerClass");
+exports.Massagist = void 0;
 var personClass_1 = require("./personClass");
 var Massagist = /** @class */ (function (_super) {
     __extends(Massagist, _super);
-    function Massagist(pName, pSurname, pAge, pGender, pHeight, pSpecialty, pFootballer) {
+    function Massagist(pName, pSurname, pAge, pGender, pHeight, pSpecialty) {
         var _this = _super.call(this, pName, pSurname, pAge, pGender, pHeight) || this;
         _this.specialty = pSpecialty;
-        _this.footballPlayers = pFootballer;
         return _this;
     }
     Massagist.prototype.getSpecialty = function () {
@@ -33,14 +31,13 @@ var Massagist = /** @class */ (function (_super) {
         this.specialty = newSpecialty;
     };
     Massagist.prototype.massage = function (player) {
-        for (var i = 0; i < footballerClass_1.footballPlayers.length; i++) {
-            if (player == footballerClass_1.footballPlayers[i]) {
-                console.log("Se realiz\u00F3 un masaje al jugador ".concat(player.getSurname())+" ".concat(player.getName()));
-            } 
-        } 
+        for (var i = 0; i < this.squadPlayers.length; i++) {
+            if (player === this.squadPlayers[i]) {
+                console.log("Se realiz\u00F3 un masaje al jugador ".concat(this.squadPlayers[i].getSurname(), " ").concat(this.squadPlayers[i].getName()));
+                break;
+            }
+        }
     };
     return Massagist;
 }(personClass_1.Person));
 exports.Massagist = Massagist;
-exports.massagist1 = new Massagist('Pedro', 'Benitez', 40, 'Hombre', 1.65, 'Masajes descontracturantes', footballerClass_1.footballPlayers);
-console.log(Massagist.prototype.massage(footballerClass_1.footballPlayers[0]));

@@ -1,7 +1,7 @@
-import { TechnicalDirector, technicalDirector1 } from './dtClass';
-import { Footballer,footballPlayers } from './footballerClass';
-import { Massagist,massagist1 } from './massagistClass';
-class FootballTeam {
+import { TechnicalDirector} from './dtClass';
+import { Footballer} from './footballerClass';
+import { Massagist} from './massagistClass';
+export class FootballTeam {
     private nameTeam:string;
     private technicalDirector:TechnicalDirector;
     private footballPlayers:Footballer[];
@@ -43,5 +43,4 @@ class FootballTeam {
         console.log(`Se despidio al masajista ${massagist.getName()}`);
     }
 }
-let Team1:FootballTeam=new FootballTeam('Talleres',technicalDirector1,footballPlayers,massagist1);
-console.log(Team1);
+

@@ -15,15 +15,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-exports.technicalDirector1 = exports.TechnicalDirector = void 0;
-var footballerClass_1 = require("./footballerClass");
+exports.TechnicalDirector = void 0;
 var personClass_1 = require("./personClass");
 var TechnicalDirector = /** @class */ (function (_super) {
     __extends(TechnicalDirector, _super);
-    function TechnicalDirector(pName, pSurname, pAge, pGender, pHeight, pFirstTeam, pFootballer) {
+    function TechnicalDirector(pName, pSurname, pAge, pGender, pHeight, pFirstTeam) {
         var _this = _super.call(this, pName, pSurname, pAge, pGender, pHeight) || this;
         _this.firstTeam = pFirstTeam;
-        _this.footballPlayers = pFootballer;
         return _this;
     }
     TechnicalDirector.prototype.getFirstTeam = function () {
@@ -52,4 +50,3 @@ var TechnicalDirector = /** @class */ (function (_super) {
     return TechnicalDirector;
 }(personClass_1.Person));
 exports.TechnicalDirector = TechnicalDirector;
-exports.technicalDirector1 = new TechnicalDirector('Juan', 'Rodriguez', 45, 'Hombre', 1.75, true, footballerClass_1.footballPlayers);
