@@ -4,9 +4,10 @@ export class TechnicalDirector extends Person {
     private firstTeam:boolean;
     private footballPlayers:Footballer[];
 
-    public constructor(pName:string,pSurname:string,pAge:number,pGender:string,pHeight:number,pFirstTeam:boolean){
+    public constructor(pName:string,pSurname:string,pAge:number,pGender:string,pHeight:number,pFirstTeam:boolean,pFootball:Footballer[]){
         super(pName,pSurname,pAge,pGender,pHeight);
         this.firstTeam=pFirstTeam;
+        this.footballPlayers=pFootball;
     }
     public getFirstTeam():any{
         if(this.firstTeam==true){

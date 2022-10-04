@@ -17,11 +17,10 @@ let footballer10:Footballer=new Footballer('Cristian','Fernandez',25,'Hombre',1.
 let footballer11:Footballer=new Footballer('Fabio','Perez',32,'Hombre',1.68,'Delantero',15,true);
 let footballPlayers:Footballer[]=[footballer1,footballer2,footballer3,footballer4,footballer5,footballer6,footballer7,footballer8,footballer9,footballer10,footballer11];
 
-let technicalDirector1:TechnicalDirector=new TechnicalDirector('Juan','Rodriguez',45,'Hombre',1.75,true);
+let technicalDirector1:TechnicalDirector=new TechnicalDirector('Juan','Rodriguez',45,'Hombre',1.75,true,footballPlayers);
 
 let massagist1:Massagist=new Massagist('Pedro','Benitez',40,'Hombre',1.65,'Masajes descontracturantes');
 
 let Team1:FootballTeam=new FootballTeam('Talleres',technicalDirector1,footballPlayers,massagist1);
 
-console.log(Team1.buyPlayer(footballer1))
-technicalDirector1.changePlayer(footballer1)
+console.log(Team1.buyPlayer(footballer1)
