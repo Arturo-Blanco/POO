@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.footballPlayers = void 0;
 var footballTeam_1 = require("./footballTeam");
 var dtClass_1 = require("./dtClass");
 var footballerClass_1 = require("./footballerClass");
@@ -15,7 +16,8 @@ var footballer8 = new footballerClass_1.Footballer('Nicolas', 'Cortez', 32, 'Hom
 var footballer9 = new footballerClass_1.Footballer('Sebastian', 'Messi', 28, 'Hombre', 1.70, 'Delantero', 10, false);
 var footballer10 = new footballerClass_1.Footballer('Cristian', 'Fernandez', 25, 'Hombre', 1.72, 'Delantero', 17, true);
 var footballer11 = new footballerClass_1.Footballer('Fabio', 'Perez', 32, 'Hombre', 1.68, 'Delantero', 15, true);
-var footballPlayers = [footballer1, footballer2, footballer3, footballer4, footballer5, footballer6, footballer7, footballer8, footballer9, footballer10, footballer11];
+exports.footballPlayers = [footballer1, footballer2, footballer3, footballer4, footballer5, footballer6, footballer7, footballer8, footballer9, footballer10, footballer11];
 var technicalDirector1 = new dtClass_1.TechnicalDirector('Juan', 'Rodriguez', 45, 'Hombre', 1.75, true);
 var massagist1 = new massagistClass_1.Massagist('Pedro', 'Benitez', 40, 'Hombre', 1.65, 'Masajes descontracturantes');
-var Team1 = new footballTeam_1.FootballTeam('Talleres', technicalDirector1, footballPlayers, massagist1);
+var Team1 = new footballTeam_1.FootballTeam('Talleres', technicalDirector1, exports.footballPlayers, massagist1);
+console.log(Team1.buyPlayer(footballer1));

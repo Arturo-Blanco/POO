@@ -39,11 +39,11 @@ var TechnicalDirector = /** @class */ (function (_super) {
         for (var i = 0; i < this.footballPlayers.length; i++) {
             if (player == this.footballPlayers[i] && player.getState() == true) {
                 player.setState(false);
-                console.log("El jugador ".concat(player.getName(), " va a la banca"));
+                return "El jugador ".concat(player.getName(), " va a la banca");
             }
             else {
                 player.setState(true);
-                console.log("El jugador ".concat(player.getName(), " es titular"));
+                return "El jugador ".concat(player.getName(), " es titular");
             }
         }
     };

@@ -22,3 +22,6 @@ let technicalDirector1:TechnicalDirector=new TechnicalDirector('Juan','Rodriguez
 let massagist1:Massagist=new Massagist('Pedro','Benitez',40,'Hombre',1.65,'Masajes descontracturantes');
 
 let Team1:FootballTeam=new FootballTeam('Talleres',technicalDirector1,footballPlayers,massagist1);
+
+console.log(Team1.buyPlayer(footballer1))
+technicalDirector1.changePlayer(footballer1)

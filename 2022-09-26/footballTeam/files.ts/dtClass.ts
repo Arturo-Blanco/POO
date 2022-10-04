@@ -18,14 +18,14 @@ export class TechnicalDirector extends Person {
     public setFirstTeam(newState:boolean):void{
         this.firstTeam=newState;
     }
-    public changePlayer(player:Footballer):void{
+    public changePlayer(player:Footballer):any{
         for(let i:number=0;i<this.footballPlayers.length;i++){
         if(player==this.footballPlayers[i] && player.getState()==true){
             player.setState(false)
-            console.log(`El jugador ${player.getName()} va a la banca`);
+            return `El jugador ${player.getName()} va a la banca`
         } else {
             player.setState(true)
-            console.log(`El jugador ${player.getName()} es titular`);
+            return `El jugador ${player.getName()} es titular`;
             }
         }
     }

@@ -25,18 +25,13 @@ var Massagist = /** @class */ (function (_super) {
         return _this;
     }
     Massagist.prototype.getSpecialty = function () {
-        return "La especialidad del masajista ".concat(this.getSurname(), " es ").concat(this.specialty);
+        return "La especialidad del masajista ".concat(this.getSurname(), " ").concat(this.getSurname(), " es ").concat(this.specialty);
     };
     Massagist.prototype.setSpecialty = function (newSpecialty) {
         this.specialty = newSpecialty;
     };
-    Massagist.prototype.massage = function (player) {
-        for (var i = 0; i < this.squadPlayers.length; i++) {
-            if (player === this.squadPlayers[i]) {
-                console.log("Se realiz\u00F3 un masaje al jugador ".concat(this.squadPlayers[i].getSurname(), " ").concat(this.squadPlayers[i].getName()));
-                break;
-            }
-        }
+    Massagist.prototype.massage = function () {
+        console.log("Se realiz\u00F3 un masaje al jugador");
     };
     return Massagist;
 }(personClass_1.Person));
