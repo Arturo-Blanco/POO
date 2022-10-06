@@ -1,7 +1,7 @@
-import { FootballTeam } from "./footballTeam";
-import { TechnicalDirector } from "./dtClass";
-import { Footballer } from "./footballerClass";
-import { Massagist } from "./massagistClass";
+import { FootballTeam } from "./files.ts/footballTeam";
+import { TechnicalDirector } from "./files.ts/dtClass";
+import { Footballer } from "./files.ts/footballerClass";
+import { Massagist } from "./files.ts/massagistClass";
 
 
 let footballer1:Footballer=new Footballer('Hernan','Rodriguez',27,'Hombre',1.78,'Arquero',1,true);

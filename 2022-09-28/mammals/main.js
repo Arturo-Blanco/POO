@@ -1,8 +1,8 @@
 "use strict";
 exports.__esModule = true;
-var carnivoreClass_1 = require("./carnivoreClass");
-var herbivoreClass_1 = require("./herbivoreClass");
-var omnivoreClass_1 = require("./omnivoreClass");
+var carnivoreClass_1 = require("./files.js/carnivoreClass");
+var herbivoreClass_1 = require("./files.js/herbivoreClass");
+var omnivoreClass_1 = require("./files.js/omnivoreClass");
 var animal1 = new carnivoreClass_1.Carnivore('Leon', 25, 'Carnivoro', 'Terrestre', 190, true);
 var animal2 = new carnivoreClass_1.Carnivore('Foca', 20, 'Carnivoro', 'Acuatico', 85, false);
 var animal3 = new herbivoreClass_1.Hervibore('Caballo', 10, 'Herviboro', 'Terrestre', 150, true);
