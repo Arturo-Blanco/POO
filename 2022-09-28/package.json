@@ -1,10 +1,14 @@
 {
   "name": "2022-09-28",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "mammalClass",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type":"git",
+    "url":"https://github.com/Arturo-Blanco/POO/tree/master/2022-09-28/mammals"
   },
   "keywords": [],
   "author": "Blanco Arturo",

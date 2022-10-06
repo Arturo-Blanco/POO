@@ -1,3 +1,4 @@
+import { Mammal } from './files.ts/mammalClass';
 import { Carnivore } from "./files.ts/carnivoreClass";
 import { Hervibore } from "./files.ts/herbivoreClass";
 import { Omnivore } from './files.ts/omnivoreClass';
@@ -9,8 +10,5 @@ let animal4:Hervibore=new Hervibore('Elefante Africano',60,'Herviboro','Terrestr
 let animal5:Omnivore=new Omnivore('Oso',15,'Omnivoro','Terreste',400,true);
 let animal6:Omnivore=new Omnivore('Perro',5,'Omnivoro','Terrestre',7,true);
 
-
-console.log(animal1.getAge());
-console.log(animal2.eat());
-console.log(animal3.getFur());
-console.log(animal4.move(50));
+let searchAnimal: number = animal1.getWeight();
+console.log(searchAnimal);
