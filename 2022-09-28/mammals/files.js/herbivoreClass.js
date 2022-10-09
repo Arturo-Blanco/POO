@@ -19,9 +19,13 @@ exports.Hervibore = void 0;
 var mammalClass_1 = require("./mammalClass");
 var Hervibore = /** @class */ (function (_super) {
     __extends(Hervibore, _super);
-    function Hervibore(pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) {
-        return _super.call(this, pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) || this;
+    function Hervibore(pAnimalName, pAge, pMovementType, pWeight, pFur) {
+        return _super.call(this, pAnimalName, pAge, pMovementType, pWeight, pFur) || this;
     }
+    Hervibore.prototype.feed = function () {
+        this.eat();
+        console.log("Los herviboros poseen dientes planos para triturar las plantas y pasturas de la que se alimentan.");
+    };
     return Hervibore;
 }(mammalClass_1.Mammal));
 exports.Hervibore = Hervibore;

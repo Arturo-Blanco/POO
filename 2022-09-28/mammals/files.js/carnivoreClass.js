@@ -16,12 +16,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.Carnivore = void 0;
-var mammalClass_1 = require("../files.ts/mammalClass");
+var mammalClass_1 = require("./mammalClass");
 var Carnivore = /** @class */ (function (_super) {
     __extends(Carnivore, _super);
-    function Carnivore(pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) {
-        return _super.call(this, pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) || this;
+    function Carnivore(pAnimalName, pAge, pMovementType, pWeight, pFur) {
+        return _super.call(this, pAnimalName, pAge, pMovementType, pWeight, pFur) || this;
     }
+    Carnivore.prototype.feed = function () {
+        this.eat();
+        console.log("Los carnivoros poseen dientes y garras afiladas para desgarrar la carne de sus presas.");
+    };
     return Carnivore;
 }(mammalClass_1.Mammal));
 exports.Carnivore = Carnivore;

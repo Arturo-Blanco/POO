@@ -2,10 +2,9 @@
 exports.__esModule = true;
 exports.Mammal = void 0;
 var Mammal = /** @class */ (function () {
-    function Mammal(pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) {
+    function Mammal(pAnimalName, pAge, pMovementType, pWeight, pFur) {
         this.animalName = pAnimalName;
         this.age = pAge;
-        this.typeFood = pTypeFood;
         this.movementType = pMovementType;
         this.weight = pWeight;
         this.fur = pFur;
@@ -15,9 +14,6 @@ var Mammal = /** @class */ (function () {
     };
     Mammal.prototype.getAge = function () {
         return this.age;
-    };
-    Mammal.prototype.getTypeFood = function () {
-        return this.typeFood;
     };
     Mammal.prototype.getMovementType = function () {
         return this.movementType;
@@ -39,9 +35,6 @@ var Mammal = /** @class */ (function () {
     Mammal.prototype.setAge = function (newAge) {
         this.age = newAge;
     };
-    Mammal.prototype.setTypeFood = function (newTypeFood) {
-        this.typeFood = newTypeFood;
-    };
     Mammal.prototype.setMovementType = function (newMovementType) {
         this.movementType = newMovementType;
     };
@@ -55,7 +48,7 @@ var Mammal = /** @class */ (function () {
         console.log("El animal ".concat(this.animalName, " se movi\u00F3 ").concat(distanceMeters, " metros."));
     };
     Mammal.prototype.eat = function () {
-        console.log("El animal ".concat(this.animalName, " se esta alimentando."));
+        console.log("El animal ".concat(this.animalName, " se esta alimentando"));
     };
     Mammal.prototype.sleep = function (hoursTime) {
         console.log("El animal ".concat(this.animalName, " durmio por ").concat(hoursTime, " horas."));

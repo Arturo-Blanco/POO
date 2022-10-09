@@ -19,9 +19,13 @@ exports.Omnivore = void 0;
 var mammalClass_1 = require("./mammalClass");
 var Omnivore = /** @class */ (function (_super) {
     __extends(Omnivore, _super);
-    function Omnivore(pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) {
-        return _super.call(this, pAnimalName, pAge, pTypeFood, pMovementType, pWeight, pFur) || this;
+    function Omnivore(pAnimalName, pAge, pMovementType, pWeight, pFur) {
+        return _super.call(this, pAnimalName, pAge, pMovementType, pWeight, pFur) || this;
     }
+    Omnivore.prototype.feed = function () {
+        this.eat();
+        console.log("Los omnivoros de alimentan con una dieta de plantas y carnes.");
+    };
     return Omnivore;
 }(mammalClass_1.Mammal));
 exports.Omnivore = Omnivore;
