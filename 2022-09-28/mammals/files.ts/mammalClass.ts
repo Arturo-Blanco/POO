@@ -24,7 +24,7 @@ export class Mammal {
     public getWeight():number{
         return this.weight;
     }
-    public getFur():any{
+    public getFur():string{
         if(this.fur==true){
         return `El animal ${this.animalName} tiene pelaje en su cuerpo`;
         } else {
