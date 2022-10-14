@@ -1,6 +1,3 @@
-import { Revista } from "./claseRevista";
-import { Libro } from "./claseLibro";
-
 export class Cliente {
     private nombre:string;
     private apellido:string;
