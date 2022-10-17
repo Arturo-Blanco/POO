@@ -43,9 +43,27 @@ export class Library {
     public setClient(newClient:Client):void{
         this.clientList.push(newClient);
     }
-    public calculatePrice(client:Client,article:Parent):number{
+    public calculatePrice(client:Client,article:Parent):any{
         let priceWithDiscount:number=0;
         priceWithDiscount=article.getPrice()*(1-client.getDiscount());
         return priceWithDiscount;
+    }
+    public setDiscount(client:Client,discount:number):void{
+        client.setDiscount(discount);
+    }
+    public soldArticle(client:Client,article:Parent):void{
+        client.buy(article);
+    }
+    public viewPurchase(client:Client,article:Parent):void{
+        let cart=client.getShoppingCart();
+        for(let i:number=0;i<cart.length;i++){
+            if(article.getTittle()===cart[i].getTittle()){
+            console.log( `El cliente ${client.getSurname()} ${client.getName()} ya compro ${article.getTittle()}`);
+        break;    
+        } else {
+            console.log(`El cliente ${client.getSurname()} ${client.getName()} aun no compro ${article.getTittle()}`);
+        break;    
+        }
+        }
     }
 }

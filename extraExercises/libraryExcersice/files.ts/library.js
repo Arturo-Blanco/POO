@@ -45,6 +45,25 @@ var Library = /** @class */ (function () {
         priceWithDiscount = article.getPrice() * (1 - client.getDiscount());
         return priceWithDiscount;
     };
+    Library.prototype.setDiscount = function (client, discount) {
+        client.setDiscount(discount);
+    };
+    Library.prototype.soldArticle = function (client, article) {
+        client.buy(article);
+    };
+    Library.prototype.viewPurchase = function (client, article) {
+        var cart = client.getShoppingCart();
+        for (var i = 0; i < cart.length; i++) {
+            if (article.getTittle() === cart[i].getTittle()) {
+                console.log("El cliente ".concat(client.getSurname(), " ").concat(client.getName(), " ya compro ").concat(article.getTittle()));
+                break;
+            }
+            else {
+                console.log("El cliente ".concat(client.getSurname(), " ").concat(client.getName(), " aun no compro ").concat(article.getTittle()));
+                break;
+            }
+        }
+    };
     return Library;
 }());
 exports.Library = Library;
