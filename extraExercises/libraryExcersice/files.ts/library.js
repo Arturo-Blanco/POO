@@ -52,16 +52,17 @@ var Library = /** @class */ (function () {
         client.buy(article);
     };
     Library.prototype.viewPurchase = function (client, article) {
-        var cart = client.getShoppingCart();
-        for (var i = 0; i < cart.length; i++) {
-            if (article.getTittle() === cart[i].getTittle()) {
-                console.log("El cliente ".concat(client.getSurname(), " ").concat(client.getName(), " ya compro ").concat(article.getTittle()));
-                break;
+        var aux = 0;
+        for (var i = 0; i < client.getShoppingCart().length; i++) {
+            if (article.getTittle() == client.getShoppingCart()[i].getTittle()) {
+                aux = 1;
             }
-            else {
-                console.log("El cliente ".concat(client.getSurname(), " ").concat(client.getName(), " aun no compro ").concat(article.getTittle()));
-                break;
-            }
+        }
+        if (aux == 1) {
+            return "El cliente ".concat(client.getSurname(), " ").concat(client.getName(), " ya compro el articulo ").concat(article.getTittle());
+        }
+        else {
+            throw Error("El cliente ".concat(client.getName(), " aun no compro el articulo ").concat(article.getTittle()));
         }
     };
     return Library;

@@ -2,15 +2,15 @@
 exports.__esModule = true;
 exports.Client = void 0;
 var Client = /** @class */ (function () {
-    function Client(pName, pSurname, pID, pAddress, pFavoriteAuthosrList, pFavoriteGenreList, pDiscount, pShoppingCart) {
+    function Client(pName, pSurname, pID, pAddress, pDiscount) {
         this.name = pName;
         this.surname = pSurname;
         this.ID = pID;
         this.address = pAddress;
-        this.favoriteAuthosrList = pFavoriteAuthosrList;
-        this.favoriteGenreList = pFavoriteGenreList;
+        this.favoriteAuthorList = [];
+        this.favoriteGenreList = [];
         this.discount = pDiscount;
-        this.shoppingCart = pShoppingCart;
+        this.shoppingCart = [];
     }
     Client.prototype.getName = function () {
         return this.name;
@@ -25,10 +25,26 @@ var Client = /** @class */ (function () {
         return this.address;
     };
     Client.prototype.getFavoriteAuthosrList = function () {
-        return this.favoriteAuthosrList;
+        if (this.favoriteAuthorList.length !== 0) {
+            return this.favoriteAuthorList;
+        }
+        else {
+            console.log("El cliente ".concat(this.surname, " ").concat(this.name, " aun no tiene autores favoritos"));
+        }
     };
     Client.prototype.getFavoriteGenreList = function () {
-        return this.favoriteGenreList;
+        if (this.favoriteGenreList.length !== 0) {
+            return this.favoriteGenreList;
+        }
+        else {
+            console.log("El cliente ".concat(this.surname, " ").concat(this.name, " aun no tiene generos favoritos"));
+        }
+    };
+    Client.prototype.addFavoriteGenre = function (newGenre) {
+        this.favoriteGenreList.push(newGenre);
+    };
+    Client.prototype.addFavoriteAuthor = function (newAuthor) {
+        this.favoriteAuthorList.push(newAuthor);
     };
     Client.prototype.getDiscount = function () {
         return this.discount;

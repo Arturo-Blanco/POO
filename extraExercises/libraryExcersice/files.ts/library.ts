@@ -23,7 +23,7 @@ export class Library {
     public getBook(pBook:Book):string{
         for(let i:number=0;i<this.bookList.length;i++){
             if(pBook===this.bookList[i]){
-            break;
+                break;
             }
         } return `El libro es ${pBook.getTittle()}`
     } 
@@ -45,8 +45,8 @@ export class Library {
     }
     public calculatePrice(client:Client,article:Parent):any{
         let priceWithDiscount:number=0;
-        priceWithDiscount=article.getPrice()*(1-client.getDiscount());
-        return priceWithDiscount;
+            priceWithDiscount=article.getPrice()*(1-client.getDiscount());
+                return priceWithDiscount;
     }
     public setDiscount(client:Client,discount:number):void{
         client.setDiscount(discount);
@@ -54,16 +54,16 @@ export class Library {
     public soldArticle(client:Client,article:Parent):void{
         client.buy(article);
     }
-    public viewPurchase(client:Client,article:Parent):void{
-        let cart=client.getShoppingCart();
-        for(let i:number=0;i<cart.length;i++){
-            if(article.getTittle()===cart[i].getTittle()){
-            console.log( `El cliente ${client.getSurname()} ${client.getName()} ya compro ${article.getTittle()}`);
-        break;    
+    public viewPurchase(client:Client,article:Parent):any{
+        let aux:number=0;
+        for(let i:number=0;i<client.getShoppingCart().length;i++){
+            if(article.getTittle()==client.getShoppingCart()[i].getTittle()){
+            aux=1;
+            }
+        } if(aux==1){
+            return `El cliente ${client.getSurname()} ${client.getName()} ya compro el articulo ${article.getTittle()}`;
         } else {
-            console.log(`El cliente ${client.getSurname()} ${client.getName()} aun no compro ${article.getTittle()}`);
-        break;    
-        }
+            throw Error(`El cliente ${client.getName()} aun no compro el articulo ${article.getTittle()}`)
         }
     }
 }
