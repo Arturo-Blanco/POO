@@ -31,20 +31,20 @@ export class Client {
     public getAddress():string{
         return this.address;
     }
-    public getFavoriteAuthosrList():any{
+    public getFavoriteAuthosrList():string[]{
         if(this.favoriteAuthorList.length!==0){
             return this.favoriteAuthorList;
         }
         else {
-            console.log(`El cliente ${this.surname} ${this.name} aun no tiene autores favoritos`);
+            throw new Error(`El cliente ${this.surname} ${this.name} aun no tiene autores favoritos`);
         }
     }
-    public getFavoriteGenreList():any{
+    public getFavoriteGenreList():string[]{
         if(this.favoriteGenreList.length!==0){
             return this.favoriteGenreList;
         }
         else {
-            console.log(`El cliente ${this.surname} ${this.name} aun no tiene generos favoritos`);
+            throw new Error(`El cliente ${this.surname} ${this.name} aun no tiene generos favoritos`);
         }
     }
     public addFavoriteGenre(newGenre:string):void{

@@ -43,7 +43,7 @@ export class Library {
     public setClient(newClient:Client):void{
         this.clientList.push(newClient);
     }
-    public calculatePrice(client:Client,article:Parent):any{
+    public calculatePrice(client:Client,article:Parent):number{
         let priceWithDiscount:number=0;
             priceWithDiscount=article.getPrice()*(1-client.getDiscount());
                 return priceWithDiscount;
@@ -54,7 +54,7 @@ export class Library {
     public soldArticle(client:Client,article:Parent):void{
         client.buy(article);
     }
-    public viewPurchase(client:Client,article:Parent):any{
+    public viewPurchase(client:Client,article:Parent):string{
         let aux:number=0;
         for(let i:number=0;i<client.getShoppingCart().length;i++){
             if(article.getTittle()==client.getShoppingCart()[i].getTittle()){
