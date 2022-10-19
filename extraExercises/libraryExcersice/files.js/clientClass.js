@@ -29,7 +29,7 @@ var Client = /** @class */ (function () {
             return this.favoriteAuthorList;
         }
         else {
-            console.log("El cliente ".concat(this.surname, " ").concat(this.name, " aun no tiene autores favoritos"));
+            throw new Error("El cliente ".concat(this.surname, " ").concat(this.name, " aun no tiene autores favoritos"));
         }
     };
     Client.prototype.getFavoriteGenreList = function () {
@@ -37,7 +37,7 @@ var Client = /** @class */ (function () {
             return this.favoriteGenreList;
         }
         else {
-            console.log("El cliente ".concat(this.surname, " ").concat(this.name, " aun no tiene generos favoritos"));
+            throw new Error("El cliente ".concat(this.surname, " ").concat(this.name, " aun no tiene generos favoritos"));
         }
     };
     Client.prototype.addFavoriteGenre = function (newGenre) {
