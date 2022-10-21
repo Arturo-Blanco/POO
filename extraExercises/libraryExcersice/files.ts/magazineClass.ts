@@ -1,6 +1,6 @@
-import { Parent } from './parentClass';
+import { Publication } from "./publicationClass";
 
-export class Magazine extends Parent{
+export class Magazine extends Publication{
     private number:number;
     private year:number;
     public constructor(pTittle:string,pPagesNumber:number,pAuthor:string,pPrice:number,pNumber:number,pYear:number){

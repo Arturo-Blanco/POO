@@ -1,4 +1,4 @@
-import { Parent } from "./parentClass";
+import { Publication } from "./publicationClass";
 export class Client {
     private name:string;
     private surname:string;
@@ -7,7 +7,7 @@ export class Client {
     private favoriteAuthorList:string[];
     private favoriteGenreList:string[];
     private discount:number;
-    private shoppingCart:Parent[];
+    private shoppingCart:Publication[];
 
     public constructor(pName:string,pSurname:string,pID:number,pAddress:string,pDiscount:number){
         this.name=pName;
@@ -59,10 +59,10 @@ export class Client {
     public setDiscount(newDiscount:number):void{
     this.discount=newDiscount;
     }
-    public getShoppingCart():Parent[]{
+    public getShoppingCart():Publication[]{
         return this.shoppingCart;
     }
-    public buy(article:Parent):void{
+    public buy(article:Publication):void{
         this.shoppingCart.push(article)
     }
 }

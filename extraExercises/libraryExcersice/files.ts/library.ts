@@ -1,7 +1,7 @@
 import { Book } from './bookClass';
 import { Magazine } from './magazineClass';
 import { Client } from './clientClass';
-import { Parent } from './parentClass';
+import { Publication } from './publicationClass';
 
 export class Library {
     private clientList:Client[];
@@ -43,7 +43,7 @@ export class Library {
     public setClient(newClient:Client):void{
         this.clientList.push(newClient);
     }
-    public calculatePrice(client:Client,article:Parent):number{
+    public calculatePrice(client:Client,article:Publication):number{
         let priceWithDiscount:number=0;
             priceWithDiscount=article.getPrice()*(1-client.getDiscount());
                 return priceWithDiscount;
@@ -51,10 +51,10 @@ export class Library {
     public setDiscount(client:Client,discount:number):void{
         client.setDiscount(discount);
     }
-    public soldArticle(client:Client,article:Parent):void{
+    public soldArticle(client:Client,article:Publication):void{
         client.buy(article);
     }
-    public viewPurchase(client:Client,article:Parent):string{
+    public viewPurchase(client:Client,article:Publication):string{
         let aux:number=0;
         for(let i:number=0;i<client.getShoppingCart().length;i++){
             if(article.getTittle()==client.getShoppingCart()[i].getTittle()){
