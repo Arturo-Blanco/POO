@@ -1,4 +1,4 @@
-export class Parent {
+export class Publication {
     protected tittle:string;
     protected pagesNumber:number;
     protected author:string;
