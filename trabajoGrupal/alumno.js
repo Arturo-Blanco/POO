@@ -20,16 +20,17 @@ var Alumno = /** @class */ (function () {
     Alumno.prototype.rendirExamen = function (examen, respuestas) {
         var aux = false;
         for (var i = 0; i < this.examenesRendidos.length; i++) {
-            if (examen === this.examenesRendidos[i].getExamen()) {
+            if (examen !== this.examenesRendidos[i].getExamen()) {
+                this.examenesRendidos[i].rendicionDeExamen(examen, respuestas);
                 aux = true;
             }
         }
         if (aux == true) {
-            console.log("Las respuestas del alumno ".concat(this.nombre, " son ").concat(respuestas));
+            console.log("El alumno ".concat(this.nombre, " acaba de rendir el examen de ").concat(examen.getTema()));
             return true;
         }
         else {
-            console.log("El alumno ".concat(this.nombre, " aun no rindio el examen ").concat(examen.getTema()));
+            console.log("El alumno ".concat(this.nombre, " ya rindio el examen de ").concat(examen.getTema()));
             return false;
         }
     };

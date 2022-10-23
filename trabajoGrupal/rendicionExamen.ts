@@ -20,10 +20,10 @@ export class RendicionDeExamen {
         return this.examen;
     }
     public estaAprobado():boolean{
-            if(this.examen.equals(RendicionDeExamen)===true){
+            if(this.examen.equals(this.respuestas)===true){
                 console.log(`El alumno aprobo`);
                 return true;
-            } else{
+            }else{
                 console.log(`El alumno desaprobo`);
                 return false;
             }

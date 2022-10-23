@@ -16,8 +16,8 @@ var Examen = /** @class */ (function () {
     Examen.prototype.equals = function (o) {
         var aux = 0;
         for (var i = 0; i < this.preguntas.length; i++) {
-            if (this.preguntas[i].esCorrecta(o[i])) {
-                aux = aux + 1;
+            if (o[i] === this.preguntas[i].esCorrecta(o[i])) {
+                aux = +this.preguntas[i].getPuntaje();
             }
         }
         if (aux >= this.puntajeAprobacion) {

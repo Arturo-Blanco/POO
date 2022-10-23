@@ -21,7 +21,7 @@ export class Pregunta {
         }
     public esCorrecta(respuesta:number):boolean{
         let aux=false;
-        for(let i:number=0;i<this.opciones.length;i++){
+        for(let i:number=1;i<=this.opciones.length;i++){
         if (respuesta===this.opcionCorrecta){
             aux=true;
         }

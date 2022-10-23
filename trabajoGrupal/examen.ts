@@ -21,10 +21,10 @@ export class Examen {
     public equals(o:Object):boolean{
         let aux=0;
         for(let i:number=0;i<this.preguntas.length;i++){
-            if(this.preguntas[i].esCorrecta(o[i])){
-                aux=aux+1;
-            }
-        } if(aux>=this.puntajeAprobacion){
+            if(o[i]===this.preguntas[i].esCorrecta(o[i])){  
+                aux=+this.preguntas[i].getPuntaje(); 
+                }
+        }if(aux>=this.puntajeAprobacion){
             return true;
         } else {
             return false;

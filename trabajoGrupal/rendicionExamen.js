@@ -17,7 +17,7 @@ var RendicionDeExamen = /** @class */ (function () {
         return this.examen;
     };
     RendicionDeExamen.prototype.estaAprobado = function () {
-        if (this.examen.equals(RendicionDeExamen) === true) {
+        if (this.examen.equals(this.respuestas) === true) {
             console.log("El alumno aprobo");
             return true;
         }
