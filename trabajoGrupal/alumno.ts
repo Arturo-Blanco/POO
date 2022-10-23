@@ -22,16 +22,17 @@ export class Alumno {
         return this.dni;
     }
     public rendirExamen(examen:Examen,respuestas:number[]):boolean{
-        let aux=0;
+        let aux=false;
         for(let i:number=0;i<this.examenesRendidos.length;i++){
-            if(this.examenesRendidos[i].getExamen()===examen){
-                if(respuestas[i]===RendicionDeExamen.)
-        }
-        if(aux===1){
-        return true
-        }   else {
-        return false
+            if(examen===this.examenesRendidos[i].getExamen()){
+            aux=true;
             }
+        } if(aux==true){
+            console.log(`Las respuestas del alumno ${this.nombre} son ${respuestas}`);
+            return true;
+        } else {
+            console.log(`El alumno ${this.nombre} aun no rindio el examen ${examen.getTema()}`);
+            return false;
         }
     }
 }

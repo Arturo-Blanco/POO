@@ -1,0 +1,17 @@
+"use strict";
+exports.__esModule = true;
+var pregunta_1 = require("./pregunta");
+var examen_1 = require("./examen");
+var rendicionExamen_1 = require("./rendicionExamen");
+var opcPreg1 = ['2', '3', '4', '5'];
+var opcPreg2 = ['6', '8', '12', '15'];
+var opcPreg3 = ['100', '200', '300', '400'];
+var pregunta1 = new pregunta_1.Pregunta('Cuanto es 2+2', opcPreg1, 2, 2);
+var pregunta2 = new pregunta_1.Pregunta('Cuanto es 4*3', opcPreg2, 2, 2);
+var pregunta3 = new pregunta_1.Pregunta('Cuanto es 100 + 100', opcPreg3, 1, 2);
+var preguntas = [pregunta1, pregunta2, pregunta3];
+var examen1 = new examen_1.Examen(preguntas, 'Matematicas', 6);
+var respuestasExamen = [2, 2, 1];
+var rendicionExamen = new rendicionExamen_1.RendicionDeExamen(examen1, respuestasExamen);
+rendicionExamen.estaAprobado();
+examen1.equals(rendicionExamen_1.RendicionDeExamen);
