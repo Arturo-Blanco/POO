@@ -27,10 +27,10 @@ export class Pregunta {
         }
     }
         if(aux===true){
-            console.log(`La respuesta de la pregunta ${this.consigna} es correcta`);
+            console.log(`La respuesta de la pregunta ${this.consigna} es correcta.`);
                 return true;
         } else {
-            console.log(`La respuesta de la pregunta ${this.consigna} es incorrecta, la opcion correcta es la ${this.opcionCorrecta}`);
+            console.log(`La respuesta de la pregunta ${this.consigna} es incorrecta, la opcion correcta es la ${this.opcionCorrecta}.`);
                 return false;
         }
     }

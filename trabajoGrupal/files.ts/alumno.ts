@@ -24,15 +24,15 @@ export class Alumno {
     public rendirExamen(examen:Examen,respuestas:number[]):boolean{
         let aux=false;
         for(let i:number=0;i<this.examenesRendidos.length;i++){
-            if(examen!==this.examenesRendidos[i].getExamen()){
+            if(examen==this.examenesRendidos[i].getExamen()){
                 this.examenesRendidos[i].rendicionDeExamen(examen,respuestas);
             aux=true;
             }
         } if(aux==true){
-            console.log(`El alumno ${this.nombre} acaba de rendir el examen de ${examen.getTema()}`);
+            console.log(`El alumno ${this.nombre} acaba de rendir el examen de ${examen.getTema()}.`);
             return true;
         } else {
-            console.log(`El alumno ${this.nombre} ya rindio el examen de ${examen.getTema()}`);
+            console.log(`El alumno ${this.nombre} ya rindio el examen de ${examen.getTema()}.`);
             return false;
         }
     }

@@ -11,7 +11,7 @@ export class Examen {
         this.puntajeAprobacion=pPuntajeAprobacion;
     }
     public examen(tema:string,puntajeAprobacion:number):void{
-        console.log(`El tema ${tema} se aprueba con ${puntajeAprobacion}`);
+        console.log(`El tema ${tema} se aprueba con ${puntajeAprobacion}.`);
     }
     public addPregunta(pregunta:Pregunta):void{
         this.preguntas.push(pregunta);
