@@ -1,5 +1,3 @@
-import { RendicionDeExamen } from './rendicionExamen';
-import { Alumno } from "./alumno";
 import { Pregunta } from "./pregunta";
 
 export class Examen {
