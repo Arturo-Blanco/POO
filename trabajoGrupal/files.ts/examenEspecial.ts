@@ -10,7 +10,7 @@ export class ExamenEspecial extends Examen {
     }
 
     public examenEspecial(tema:string,puntajeAprobacion:number, penalizacion:number):void{
-        console.log(`El tema es ${tema}, el puntaje de aprobacion es ${puntajeAprobacion} y la penalizacion es ${penalizacion}`);
+        console.log(`El tema es ${tema}, el puntaje de aprobacion es ${puntajeAprobacion} y la penalizacion es ${penalizacion}.`);
     }
 
     public addPregunta(pregunta:Pregunta):void{

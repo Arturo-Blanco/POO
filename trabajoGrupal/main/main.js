@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var alumno_1 = require("./../files.ts/alumno");
+var examenLengua_1 = require("./examenLengua");
+var rendicionExamen_1 = require("../files.ts/rendicionExamen");
+var examenMatematica_1 = require("./examenMatematica");
+var respuestasExamenLengua = [];
+var respuestasExamenMatematica = [];
+var rendicionExamenMatematica = new rendicionExamen_1.RendicionDeExamen(examenMatematica_1.examenMatematica, respuestasExamenMatematica);
+var rendicionExamenLengua = new rendicionExamen_1.RendicionDeExamen(examenLengua_1.examenLengua, respuestasExamenLengua);
+var examenesRendidos = [rendicionExamenMatematica, rendicionExamenLengua];
+var alumno1 = new alumno_1.Alumno(examenesRendidos, 'Hernan', 37232712);
+var respuestasLengua = [3, 3, 2, 1];
+var respuestasMatematica = [3, 3, 2, 2];
+alumno1.rendirExamen(examenLengua_1.examenLengua, respuestasLengua);
+alumno1.rendirExamen(examenMatematica_1.examenMatematica, respuestasMatematica);
+rendicionExamenLengua.estaAprobado();
+rendicionExamenMatematica.estaAprobado();

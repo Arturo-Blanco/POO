@@ -1,3 +1,4 @@
+import { Alumno } from './alumno';
 import { Examen } from "./examen";
 
 export class RendicionDeExamen {
@@ -20,10 +21,10 @@ export class RendicionDeExamen {
     }
     public estaAprobado():boolean{
             if(this.examen.equals(this.respuestas)===true){
-                console.log(`El alumno aprobo`);
+                console.log(`El alumno aprobo.`);
                 return true;
             }else{
-                console.log(`El alumno desaprobo`);
+                console.log(`El alumno desaprobo.`);
                 return false;
             }
         }

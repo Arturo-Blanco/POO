@@ -18,11 +18,11 @@ var RendicionDeExamen = /** @class */ (function () {
     };
     RendicionDeExamen.prototype.estaAprobado = function () {
         if (this.examen.equals(this.respuestas) === true) {
-            console.log("El alumno aprobo");
+            console.log("El alumno aprobo.");
             return true;
         }
         else {
-            console.log("El alumno desaprobo");
+            console.log("El alumno desaprobo.");
             return false;
         }
     };

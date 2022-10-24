@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+exports.examenLengua = void 0;
+var pregunta_1 = require("../files.ts/pregunta");
+var examen_1 = require("../files.ts/examen");
+var opcPreg1 = ['Coche', 'Fajin', 'Cantaro', 'Mesa'];
+var opcPreg2 = ['Ágil', 'Álto', 'Mésa', 'Alégran'];
+var opcPreg3 = ['ca-í-a', 'ha-bi-ta-ci-ón', 'sae-ta', 'a-i-re'];
+var opcPreg4 = ['ca', 'mi', 'se', 'ta'];
+var pregunta1 = new pregunta_1.Pregunta('Una de las siguientes palabras es aguda:', opcPreg1, 2, 2);
+var pregunta2 = new pregunta_1.Pregunta('Sólo una de estas palabras está escrita correctamente:', opcPreg2, 1, 2);
+var pregunta3 = new pregunta_1.Pregunta('Sólo una de estas palabras está bien separada silábicamente', opcPreg3, 1, 2);
+var pregunta4 = new pregunta_1.Pregunta('Señala la sílaba tónica de la palabra “camiseta”', opcPreg4, 3, 4);
+var preguntasLengua = [pregunta1, pregunta2, pregunta3, pregunta4];
+exports.examenLengua = new examen_1.Examen(preguntasLengua, 'Lengua', 6);

@@ -25,11 +25,11 @@ var Pregunta = /** @class */ (function () {
             }
         }
         if (aux === true) {
-            console.log("La respuesta de la pregunta ".concat(this.consigna, " es correcta"));
+            console.log("La respuesta de la pregunta ".concat(this.consigna, " es correcta."));
             return true;
         }
         else {
-            console.log("La respuesta de la pregunta ".concat(this.consigna, " es incorrecta, la opcion correcta es la ").concat(this.opcionCorrecta));
+            console.log("La respuesta de la pregunta ".concat(this.consigna, " es incorrecta, la opcion correcta es la ").concat(this.opcionCorrecta, "."));
             return false;
         }
     };

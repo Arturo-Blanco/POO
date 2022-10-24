@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+exports.examenMatematica = void 0;
+var pregunta_1 = require("../files.ts/pregunta");
+var examen_1 = require("../files.ts/examen");
+var opcPreg1 = ['2', '3', '4', '5'];
+var opcPreg2 = ['6', '8', '12', '15'];
+var opcPreg3 = ['100', '200', '300', '400'];
+var opcPreg4 = ['64', 'No se puede saber', '127', '129'];
+var pregunta1 = new pregunta_1.Pregunta('Cuanto es 2+2', opcPreg1, 3, 2);
+var pregunta2 = new pregunta_1.Pregunta('Cuanto es 4*3', opcPreg2, 3, 2);
+var pregunta3 = new pregunta_1.Pregunta('Cuanto es 100 + 100', opcPreg3, 2, 2);
+var pregunta4 = new pregunta_1.Pregunta('En un torneo de tenis, el jugador que pierde se vuelve a casa. Cuántos jugadores iniciaron este torneo si desde la ronda preliminar hasta la final se han jugado 128 partidos.', opcPreg4, 4, 4);
+var preguntasMatematicas = [pregunta1, pregunta2, pregunta3, pregunta4];
+exports.examenMatematica = new examen_1.Examen(preguntasMatematicas, 'Matematicas', 6);

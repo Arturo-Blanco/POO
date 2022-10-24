@@ -8,7 +8,7 @@ var Examen = /** @class */ (function () {
         this.puntajeAprobacion = pPuntajeAprobacion;
     }
     Examen.prototype.examen = function (tema, puntajeAprobacion) {
-        console.log("El tema ".concat(tema, " se aprueba con ").concat(puntajeAprobacion));
+        console.log("El tema ".concat(tema, " se aprueba con ").concat(puntajeAprobacion, "."));
     };
     Examen.prototype.addPregunta = function (pregunta) {
         this.preguntas.push(pregunta);
