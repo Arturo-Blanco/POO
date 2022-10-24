@@ -1,6 +1,5 @@
 import { Pregunta } from "../files.ts/pregunta";
 import { Examen } from "../files.ts/examen";
-import { RendicionDeExamen } from "../files.ts/rendicionExamen";
 
 let opcPreg1=['Coche','Fajin','Cantaro','Mesa'];
 let opcPreg2=['Ágil','Álto','Mésa','Alégran'];
