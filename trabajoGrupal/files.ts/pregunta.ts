@@ -22,10 +22,10 @@ export class Pregunta {
     public esCorrecta(respuesta:number):boolean{
         let aux=false;
         for(let i:number=0;i<=this.opciones.length;i++){
-        if (respuesta===this.opcionCorrecta){
-            aux=true;
+            if (respuesta===this.opcionCorrecta){
+                aux=true;
+            }
         }
-    }
         if(aux===true){
             console.log(`La respuesta de la pregunta ${this.consigna} es correcta.`);
                 return true;

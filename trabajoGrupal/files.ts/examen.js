@@ -13,10 +13,23 @@ var Examen = /** @class */ (function () {
     Examen.prototype.addPregunta = function (pregunta) {
         this.preguntas.push(pregunta);
     };
-    Examen.prototype.equals = function (o) {
+    /* Lucas nos aconseja reemplazar Object por un arreglo de numeros para que el codigo no se rompa al ejecutar
+    public equals(o:Object):boolean{
+        let aux=0;
+        for(let i:number=0;i<this.preguntas.length;i++){
+            if(this.preguntas[i].esCorrecta(o[i])){
+                aux=aux+this.preguntas[i].getPuntaje();
+            }
+        }if(aux>=this.puntajeAprobacion){
+            return true;
+        }else{
+            return false;
+        }
+    }*/
+    Examen.prototype.equals = function (respuestasExamen) {
         var aux = 0;
         for (var i = 0; i < this.preguntas.length; i++) {
-            if (this.preguntas[i].esCorrecta(o[i])) {
+            if (this.preguntas[i].esCorrecta(respuestasExamen[i])) {
                 aux = aux + this.preguntas[i].getPuntaje();
             }
         }
