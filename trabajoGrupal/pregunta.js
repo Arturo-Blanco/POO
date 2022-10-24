@@ -19,7 +19,7 @@ var Pregunta = /** @class */ (function () {
     };
     Pregunta.prototype.esCorrecta = function (respuesta) {
         var aux = false;
-        for (var i = 1; i <= this.opciones.length; i++) {
+        for (var i = 0; i <= this.opciones.length; i++) {
             if (respuesta === this.opcionCorrecta) {
                 aux = true;
             }
