@@ -1,6 +1,5 @@
-import { Alumno } from './alumno';
 import { Examen } from "./examen";
-import { Pregunta } from './pregunta';
+
 export class RendicionDeExamen {
     private examen:Examen;
     private respuestas:number[];
