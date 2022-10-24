@@ -19,7 +19,7 @@ export class Examen {
     public equals(o:Object):boolean{
         let aux=0;
         for(let i:number=0;i<this.preguntas.length;i++){
-            if(o[i]===this.preguntas[i].esCorrecta(o[i])){  
+            if(this.preguntas[i].esCorrecta(o[i])){  
                 aux=aux+this.preguntas[i].getPuntaje();
             }
         }if(aux>=this.puntajeAprobacion){
