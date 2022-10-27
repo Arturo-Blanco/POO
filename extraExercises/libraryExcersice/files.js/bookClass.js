@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.Book = void 0;
-var parentClass_1 = require("./parentClass");
+var publicationClass_1 = require("../files.ts/publicationClass");
 var Book = /** @class */ (function (_super) {
     __extends(Book, _super);
     function Book(pTittle, pPagesNumber, pAuthor, pPrice, pSummary, pGenre) {
@@ -32,5 +32,5 @@ var Book = /** @class */ (function (_super) {
         return this.genre;
     };
     return Book;
-}(parentClass_1.Parent));
+}(publicationClass_1.Publication));
 exports.Book = Book;
