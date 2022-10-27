@@ -1,4 +1,3 @@
-import { Mammal } from './files.ts/mammalClass';
 import { Carnivore } from "./files.ts/carnivoreClass";
 import { Hervibore } from "./files.ts/herbivoreClass";
 import { Omnivore } from './files.ts/omnivoreClass';
