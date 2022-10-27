@@ -8,28 +8,48 @@ var Library = /** @class */ (function () {
         this.magazineList = pMagazineList;
     }
     Library.prototype.getMagazine = function (pMagazine) {
+        var aux = false;
         for (var i = 0; i < this.magazineList.length; i++) {
             if (pMagazine === this.magazineList[i]) {
-                break;
+                aux = true;
             }
         }
-        return "La revista es ".concat(pMagazine.getTittle());
+        if (aux === true) {
+            console.log("El cliente es ".concat(pMagazine.getTittle()));
+            return true;
+        }
+        else {
+            throw Error("No existe informacion del libro");
+        }
     };
     Library.prototype.getBook = function (pBook) {
+        var aux = false;
         for (var i = 0; i < this.bookList.length; i++) {
             if (pBook === this.bookList[i]) {
-                break;
+                aux = true;
             }
         }
-        return "El libro es ".concat(pBook.getTittle());
+        if (aux === true) {
+            console.log("El cliente es ".concat(pBook.getTittle()));
+            return true;
+        }
+        else {
+            throw Error("No existe informacion del libro");
+        }
     };
     Library.prototype.getClient = function (pClient) {
+        var aux = false;
         for (var i = 0; i < this.clientList.length; i++) {
             if (pClient === this.clientList[i]) {
-                break;
+                aux = true;
             }
         }
-        return "El cliente es ".concat(pClient.getSurname(), " ").concat(pClient.getName());
+        if (aux === true) {
+            return "El cliente es ".concat(pClient.getSurname(), " ").concat(pClient.getName());
+        }
+        else {
+            throw Error("No existe informacion del cliente");
+        }
     };
     Library.prototype.setMagazine = function (newMagazine) {
         this.magazineList.push(newMagazine);

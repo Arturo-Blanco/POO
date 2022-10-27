@@ -16,7 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.Magazine = void 0;
-var parentClass_1 = require("./parentClass");
+var publicationClass_1 = require("./publicationClass");
 var Magazine = /** @class */ (function (_super) {
     __extends(Magazine, _super);
     function Magazine(pTittle, pPagesNumber, pAuthor, pPrice, pNumber, pYear) {
@@ -32,5 +32,5 @@ var Magazine = /** @class */ (function (_super) {
         return this.year;
     };
     return Magazine;
-}(parentClass_1.Parent));
+}(publicationClass_1.Publication));
 exports.Magazine = Magazine;

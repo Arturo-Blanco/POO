@@ -30,5 +30,5 @@ newLibrary.soldArticle(client2, magazine3); /*Libreria vende articulo a client2*
 console.log(client1);
 client1.addFavoriteAuthor('Pepe'); /*Se agrega autor favorito a client1*/
 console.log(client1); /*Se verifica que se haya agregado autor*/
-var item = newLibrary.viewPurchase(client1, magazine2); /*Se verifica si el cliente 1 compro un articulo*/
-console.log(item);
+var consulta = newLibrary.getClient(client1);
+console.log(consulta);
