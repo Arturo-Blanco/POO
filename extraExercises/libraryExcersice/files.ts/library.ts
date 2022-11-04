@@ -14,26 +14,42 @@ export class Library {
         this.magazineList=pMagazineList;
     }
     public getMagazine(pMagazine:Magazine):string{
+        let aux=false;
         for(let i:number=0;i<this.magazineList.length;i++){
             if(pMagazine===this.magazineList[i]){
-                break;
+                aux=true;
             }
-        } return `La revista es ${pMagazine.getTittle()}`
+        } if(aux==true){
+                return `La revista es ${pMagazine.getTittle()}`
+        } else {
+                throw Error(`la revista no existe`)
+        } 
     } 
     public getBook(pBook:Book):string{
+        let aux=false;
         for(let i:number=0;i<this.bookList.length;i++){
             if(pBook===this.bookList[i]){
-                break;
+                aux=true;
             }
-        } return `El libro es ${pBook.getTittle()}`
+        } if(aux==true){
+        return `El libro es ${pBook.getTittle()}`
+        } else {
+            throw Error(`El libro no existe`)
+        }
     } 
     public getClient(pClient:Client):string{
+        let aux=false;
         for(let i:number=0;i<this.clientList.length;i++){
             if(pClient===this.clientList[i]){
-                break;
+            aux=true;
             }
-        } return `El cliente es ${pClient.getSurname()} ${pClient.getName()}`
-    } 
+        } 
+        if(aux==true){
+            return `El cliente es ${pClient.getSurname()} ${pClient.getName()}`;
+        } else {
+        throw Error(`Esta persona no es cliente de la libreria`)
+        }
+    }
     public setMagazine(newMagazine:Magazine):void{
         this.magazineList.push(newMagazine);
     } 
